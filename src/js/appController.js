@@ -21,10 +21,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
        // Router setup
        self.router = oj.Router.rootInstance;
        self.router.configure({
-         'collections': {label: 'collections', isDefault: true},
-         'incidents': {label: 'Incidents'},
-         'customers': {label: 'Customers'},
-         'about': {label: 'About'}
+         'collections': {label: 'Collections', isDefault: true},
+         'controls': {label: 'Controls'},
+         'forms': {label: 'Forms'},
+         'framework': {label: 'Framework'},
+         'layout': {label: 'Layout'},
+         'patterns': {label: 'Patterns'},
+         'visualizations': {label: 'Visualizations'}
        });
       // oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlPathAdapter();
