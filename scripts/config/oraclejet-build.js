@@ -108,10 +108,16 @@ module.exports = function () {
  * It takes a fileList as input, see copyCustomLibsToStaging section for examples of fileList
  * See detailed node sass options available here https://github.com/sass/node-sass
  */
-    // sass: {
-    //   fileList: [],
-    //   options: {}
-    // },
+    sass: {
+      fileList: [{
+        cwd: 'src/css',
+        src: ['**/*.scss', '!**/_*.scss'],
+        dest: `web/css`
+      }],
+      options: {
+        precision: 10
+      }
+    },
 
 /**
  * This is the web specific configuration. You can specify configurations targeted only for web apps. 

@@ -3,8 +3,85 @@
  The Universal Permissive License (UPL), Version 1.0
  -->
 <div class="oj-hybrid-padding">
-  <h1>Collections Content Area</h1>
   <div>
-    Collections
+    <div class="collections-container">
+      <div id="tabbarcontainer" data-bind="style: {'maxWidth':(edge() === 'end' || edge() === 'start') ? '250px':''}">
+        <oj-tab-bar drill-mode="none" display="[[display]]" edge="[[edge]]" selection="{{selectedItem}}">
+          <ul>
+            <li id="data-grid">
+              <a href="#">
+                <span class="oj-tabbar-item-icon
+                          demo-home-icon-24 demo-icon-font-24">
+                </span>
+                Data Grid
+              </a>
+            </li>
+            <li id="indexer">
+              <a href="#">
+                <span class="oj-tabbar-item-icon
+                          demo-education-icon-24 demo-icon-font-24">
+                </span>
+                Indexer
+              </a>
+            </li>
+            <li id="list-view" class="oj-disabled">
+              <a href="#">
+                <span class="oj-tabbar-item-icon
+                          demo-catalog-icon-24 demo-icon-font-24">
+                </span>
+                List View
+              </a>
+            </li>
+            <li id="paging-control">
+              <a href="#">
+                <span class="oj-tabbar-item-icon
+                          demo-palette-icon-24 demo-icon-font-24">
+                </span>
+                Paging Control
+              </a>
+            </li>
+            <li id="pull-to-refresh">
+              <a href="#">
+                <span class="oj-tabbar-item-icon
+                          demo-library-icon-24 demo-icon-font-24">
+                </span>
+                Pull To Refresh(Touch)
+              </a>
+            </li>
+            <li id="row-expander">
+              <a href="#">
+                <span class="oj-tabbar-item-icon demo-chat-icon-24 demo-icon-font-24">
+                </span>
+                Row Expander
+              </a>
+            </li>
+            <li id="swipe-to-review">
+              <a href="#">
+                <span class="oj-tabbar-item-icon demo-chat-icon-24 demo-icon-font-24">
+                </span>
+                Swipe To Reveal(Touch)
+              </a>
+            </li>
+            <li id="table">
+              <a href="#">
+                <span class="oj-tabbar-item-icon demo-chat-icon-24 demo-icon-font-24">
+                </span>
+                Table
+              </a>
+            </li>
+            <li id="tree-view">
+              <a href="#">
+                <span class="oj-tabbar-item-icon demo-chat-icon-24 demo-icon-font-24">
+                </span>
+                Tree View
+              </a>
+            </li>
+          </ul>
+        </oj-tab-bar>
+      </div>
+      <div class="collections-content">
+          <span id="results" data-bind='text: selectedItem'></span>
+      </div>
+    </div>
   </div>
 </div>

@@ -96,7 +96,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
 
       // Header
       // Application Name used in Branding Area
-      self.appName = ko.observable("Oracle JET - Playground");
+      self.appName = ko.observable("JET Playground");
       // User Info used in Global Navigation area
       self.userLogin = ko.observable("byron.bai@oracle.com");
 
