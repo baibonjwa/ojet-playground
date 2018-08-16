@@ -7,7 +7,7 @@
 // 2. platform theme aggregating file
 
 //import custom variable overrides
-@import "themeName.ios.settings";
+@import "playground.android.settings";
 
-// import alta-ios aggregating file
-@import "../../../../node_modules/@oracle/oraclejet/dist/scss/alta-ios/oj-alta";
+// import alta-android aggregating file
+@import "../../../../node_modules/@oracle/oraclejet/dist/scss/alta-android/oj-alta";

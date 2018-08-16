@@ -12,7 +12,6 @@
  * Any fileList will replace the default configuration.
  */
 
-
 module.exports = function () {
   return {
 /**
@@ -36,16 +35,11 @@ module.exports = function () {
     //       livereload: true
     //     }
     //   },
-    sass: {
-      files: [
-        'src/css/**/*',
-      ],
-      options: {
-        livereload: true,
-        spawn: false
-      },
-      commands: ['compileSass']
-    },
+
+    //   sass: {
+    //     files: [],
+    //     commands: ['compileSass']
+    //   },
 
     //   themes: {
     //     files: [],

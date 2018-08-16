@@ -65,8 +65,8 @@
 //       the path to your image directory or the text direction.
 //-----------------------------------------------------------------------------
 
-$themeName:           themeName !default;
-//$themeTargetPlatform: android !default; // targets the android 5 look and feel
+$themeName:           playground !default;
+//$themeTargetPlatform: web !default;
 
 
 // PATHS
@@ -74,10 +74,10 @@ $themeName:           themeName !default;
 // these paths should be relative to the generated css file
 
 // path to images
-$imageDir: "../../../alta/5.1.0/android/images/" !default;
+$imageDir: "../../../alta/5.1.0/web/images/" !default;
 
 // path to (icon) fonts
-$fontDir:  "../../../alta/5.1.0/android/fonts/" !default;
+$fontDir:  "../../../alta/5.1.0/web/fonts/" !default;
 
 // path to common images (images shared across themes)
 $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
@@ -421,7 +421,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // When $fontWeightNormalization is set to true we look at
 // the $fontFamily var to see if one of the known local system
 // fonts might be used and if so attempt to normalize the font weights
-//$fontWeightNormalization: false !default;
+//$fontWeightNormalization: $allowTagSelectors !default;
 
 
 // font size
@@ -436,14 +436,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // the html element with your own class or inline style.
 //
 // The browser default font size is 16px
-//$rootFontSize:    1em !default;  // 16px
+//$rootFontSize:    .875em !default;    // 14px
 
 //$fontSize:         1rem !default;
-//$smallestFontSize: oj-px-to-rem(12px, $baseFontSize: 16px) !default;
-//$smallFontSize:    oj-px-to-rem(14px, $baseFontSize: 16px) !default;
-//$mediumFontSize:   oj-px-to-rem(20px, $baseFontSize: 16px) !default;
-//$largeFontSize:    oj-px-to-rem(24px, $baseFontSize: 16px) !default;
-//$largestFontSize:  oj-px-to-rem(34px, $baseFontSize: 16px) !default;
+//$smallestFontSize: oj-px-to-rem(11px, $baseFontSize: 14px)  !default;
+//$smallFontSize:    oj-px-to-rem(12px, $baseFontSize: 14px)  !default;
+//$mediumFontSize:   oj-px-to-rem(16px, $baseFontSize: 14px)  !default;
+//$largeFontSize:    oj-px-to-rem(18px, $baseFontSize: 14px)  !default;
+//$largestFontSize:  oj-px-to-rem(20px, $baseFontSize: 14px)  !default;
 
 
 
@@ -453,24 +453,24 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //    these variables are used broadly
 //    in the widget files
 //----------------------------------
-//$textColor:                 $textColor1 !default;
-//$primaryTextColor:          $textColor1 !default;
-//$secondaryTextColor:        $textColor5 !default;
-//$tertiaryTextColor:         $secondaryTextColor !default;
-//$contrastTextColor:         $neutralColor1 !default;
-//$textColorDisabled:         $textColor7 !default;
-//$textColorError:    $accentColorDanger4 !default;
+//$textColor:                           $textColor3 !default;
+//$primaryTextColor:                    $textColor1 !default;
+//$secondaryTextColor:                  $textColor4 !default;
+//$tertiaryTextColor:                   $textColor6 !default;
+//$contrastTextColor:                   $neutralColor1 !default;
+//$textColorDisabled:                   $textColor7 !default;
+//$textColorError:        $accentColorDanger5 !default;
 
-//$formControlLabelColor:     $textColor3 !default;
+//$formControlLabelColor:               $textColor5 !default;
 
-//$headerTextColor:           $secondaryTextColor !default;
+//$headerTextColor:                     $textColor2 !default;
 
-//$linkTextColor:             $brandColorDark1 !default;
-//$linkTextColorActive:   null !default;
-//$linkTextColorVisited:      $linkTextColor !default;
+//$linkTextColor:                       $brandColorDark1 !default;
+//$linkTextColorActive:                 $brandColorDark2 !default;
+//$linkTextColorVisited:                $linkTextColor !default;
 // note that $opacityDisabled is
 // used for a disabled link in addition to color
-//$linkTextColorDisabled:     $textColorDisabled !default;
+//$linkTextColorDisabled:               $textColorDisabled !default;
 
 
 //-----------------------------------------------------------------------------
@@ -485,10 +485,10 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // icon colors
 //----------------------------------
 // these are used to control the color of icon font icons
-//$iconColor:                 $textColor !default;
+//$iconColor:         $textColor !default;
 // colors for clickable icons below
 //$iconColorDefault:          $neutralColor12 !default;
-//$iconColorHover:            $brandColorLight1 !default;
+//$iconColorHover:    $brandColorLight1 !default;
 //$iconColorActive:           $brandColor !default;
 //$iconColorSelected:         $iconColorActive !default;
 // note that $opacityDisabled is
@@ -497,7 +497,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // interaction cue colors
 //----------------------------------
-//$colorRequired:     $brandColorDark1 !default;
+//$colorRequired:         $brandColorDark1 !default;
 
 // border color
 //----------------------------------
@@ -511,17 +511,17 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // border radius
 //----------------------------------
-//$smallBorderRadius:  2px !default;
+//$smallBorderRadius:  1px !default;
 //$mediumBorderRadius: 2px !default;
 //$largeBorderRadius:  3px !default;
 
 
 // shadow
 //----------------------------------
-//$boxShadowColor:  $neutralColor17 !default;
-//$smallBoxShadow:  0 0 5px 0 transparentize($boxShadowColor, .80) !default;
-//$mediumBoxShadow: 1px 1px 5px 0 transparentize($boxShadowColor, .60) !default;
-//$largeBoxShadow:  1px 1px 10px 0 transparentize($boxShadowColor, .55) !default;
+//$boxShadowColor:                      $neutralColor17 !default;
+//$smallBoxShadow:                      1px 1px 3px 0 transparentize($boxShadowColor, .65) !default;
+//$mediumBoxShadow:                     1px 1px 5px 0 transparentize($boxShadowColor, .60) !default;
+//$largeBoxShadow:                      1px 1px 10px 0 transparentize($boxShadowColor, .55) !default;
 
 // // overlay
 // //----------------------------------
@@ -576,7 +576,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // disabled
 //----------------------------------
 // opacity is often used to indicate something is disabled
-//$opacityDisabled: .5 !default;
+//$opacityDisabled: null !default;
 
 
 // animation
@@ -592,10 +592,10 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // animation types.  Valid values are the names of specific animation
 // implementations in oj.ModuleAnimations such as coverStart, coverUp,
 // revealEnd, revealDown, zoomIn, zoomOut.
-//$animationNavChildDefault:           coverUp     !default;
-//$animationNavParentDefault:          revealDown  !default;
-//$animationNavSiblingEarlierDefault:  pushEnd     !default;
-//$animationNavSiblingLaterDefault:    pushStart   !default;
+//$animationNavChildDefault:           coverStart  !default;
+//$animationNavParentDefault:          revealEnd   !default;
+//$animationNavSiblingEarlierDefault:  null        !default;
+//$animationNavSiblingLaterDefault:    null        !default;
 
 
 // focus
@@ -773,16 +773,16 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 // link text color defined in "text colors" section, look for "$linkTextColor"
 //$linkTextDecoration:      none !default;
-//$linkTextDecorationHover: none !default;
+//$linkTextDecorationHover: underline !default;
 //$linkFontWeightActive:    normal !default;
-//$linkBgColorActive:       $neutralColor9 !default;
+//$linkBgColorActive:        null !default;
 
 
 // PANEL
 //-----------------------------------------------------------------------------
 
 // panel defaults:
-//$panelPadding:             .5rem !default;
+//$panelPadding: oj-px-to-rem(12px, $baseFontSize: 14px) !default;
 //$panelBgColor:             $neutralColor1 !default;
 //$panelBorderColor:         $neutralColor8 !default;
 //$panelBorderColorSelected: $brandColor !default;
@@ -800,10 +800,10 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 
 //$panel1BgColor:     $neutralColor5 !default;
-//$panel1BorderColor: $neutralColor9     !default;
+//$panel1BorderColor: $neutralColor8 !default;
 
-//$panel2BgColor:     #dae9f5 !default;
-//$panel2BorderColor: #aed8fa !default;
+//$panel2BgColor:     #e8f2fb !default;
+//$panel2BorderColor: adjust-color($panel2BgColor, $lightness: $panelBorderColorLightnessAdjustment, $saturation: $panelBorderColorSaturationAdjustment) !default;
 
 
 //$panel3BgColor:     #fef9e8 !default;
@@ -818,8 +818,8 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$panel4BorderColor: #ffcdc8 !default;
 
 
-//$panel5BgColor:     $neutralColor6 !default;
-//$panel5BorderColor: $neutralColor9     !default;
+//$panel5BgColor:     #fce8fe !default;
+//$panel5BorderColor: adjust-color($panel5BgColor, $lightness: $panelBorderColorLightnessAdjustment, $saturation: $panelBorderColorSaturationAdjustment) !default;
 
 
 // HEADERS
@@ -830,29 +830,29 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // $headerFontWeight is applied to all headers and
 // is also used by components like dialog, chart etc.
-//$headerFontWeight:      500 !default;
+//$headerFontWeight:      normal !default;
 
 // $header[1|2|3|4|5]FontWeight vars can be used
 // to override the default font weight, they are
 // applied to h[1|2|3|4|5] tags
-//$header1FontWeight:     null   !default;
-//$header2FontWeight:     null   !default;
-//$header3FontWeight:     null   !default;
-//$header4FontWeight:     null   !default;
-//$header5FontWeight:     null   !default;
+//$header1FontWeight: 200   !default;
+//$header2FontWeight: 300   !default;
+//$header3FontWeight: 300   !default;
+//$header4FontWeight: 400   !default;
+//$header5FontWeight: 400   !default;
 
 
 // $header[1|2|3|4|5]FontSize vars are
 // applied to h[1|2|3|4|5] tags
-//$header1FontSize:       $largestFontSize   !default;
-//$header2FontSize:       $largeFontSize     !default;
-//$header3FontSize:       $mediumFontSize    !default;
-//$header4FontSize:       $fontSize          !default;
-//$header5FontSize:       $smallFontSize   !default;
+//$header1FontSize: oj-px-to-rem(34px, $baseFontSize: 14px) !default;
+//$header2FontSize: oj-px-to-rem(24px, $baseFontSize: 14px) !default;
+//$header3FontSize: $largestFontSize !default;
+//$header4FontSize: $largeFontSize   !default;
+//$header5FontSize: $mediumFontSize  !default;
 
 // the background variables below are for a header "container",
 // like the title bar of a dialog or an accordion header
-//$headerBgColor:         $neutralColor6 !default;
+//$headerBgColor:         $neutralColor5 !default;
 //$headerBgColorDisabled: $neutralColor3 !default;
 //$headerBgImage:         null;
 
@@ -860,16 +860,16 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // WINDOW
 //-----------------------------------------------------------------------------
-//$windowBorderColor:       $neutralColor10 !default;
-//$windowBorderWidth:       1px !default;
-//$windowBgColor:     $neutralColor1 !default;
+//$windowBorderColor:   $neutralColor9 !default;
+//$windowBorderWidth:   1px !default;
+//$windowBgColor:       $neutralColor2 !default;
 
 // NOTE WINDOW
 //-----------------------------------------------------------------------------
 //$noteWindowBorderColor:      $windowBorderColor !default;
 //$noteWindowBorderWidth:      $windowBorderWidth !default;
 //$noteWindowBgColor:          $windowBgColor !default;
-//$noteWindowBoxShadow: $smallBoxShadow !default;
+//$noteWindowBoxShadow:        $mediumBoxShadow !default;
 
 // tail width and height
 //$noteWindowTailSimpleWidth:  14px !default;
@@ -885,11 +885,11 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$popupBorderColor:  $windowBorderColor !default;
 //$popupBorderWidth:  $windowBorderWidth !default;
 //$popupBgColor:      $neutralColor1 !default;
-//$popupBorderRadius: 0 !default;
+//$popupBorderRadius: $smallBorderRadius !default;
 //$popupBoxShadow:    $smallBoxShadow !default;
 
 // Placeholder for theme specific popup modality option override.
-//$popupModalityOptionDefault: modal !default;
+//$popupModalityOptionDefault: null !default;
 
 // animation theme defaults
 //$popupOpenAnimation: ((effect: "zoomIn", transformOrigin: "#myPosition"), "fadeIn") !default;
@@ -904,14 +904,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // Note that in case of smaller screen width (< 768px wide) the messages container stretches full
 //  width, and in this case the following *Width/*MinWidth/*MaxWidth variables do not take effect.
-//$messagesGeneralOverlayWidth:                           60vw !default;
-//$messagesGeneralOverlayMinWidth:          614px !default;
-//$messagesGeneralOverlayMaxWidth:          1536px !default;
-//$messagesGeneralOverlayBorderStyle:                     null !default;
-//$messagesGeneralOverlayBorderWidth:                     null !default;
-//$messagesGeneralOverlayBorderColor:                     null !default;
-//$messagesGeneralOverlayBorderRadius:      $smallBorderRadius !default;
-//$messagesGeneralOverlayBoxShadow:         $smallBoxShadow !default;
+//$messagesGeneralOverlayWidth:               calc(100% - 20px) !default;
+//$messagesGeneralOverlayMinWidth:                        $messagesGeneralOverlayWidth !default;
+//$messagesGeneralOverlayMaxWidth:                        $messagesGeneralOverlayWidth !default;
+//$messagesGeneralOverlayBorderStyle:         solid !default;
+//$messagesGeneralOverlayBorderWidth:         $windowBorderWidth !default;
+//$messagesGeneralOverlayBorderColor:         $neutralColor9 !default;
+//$messagesGeneralOverlayBorderRadius:        $smallBorderRadius !default;
+//$messagesGeneralOverlayBoxShadow:           $smallBoxShadow !default;
 
 // Variable to override the default position of oj-messages container
 //$messagesGeneralOverlayPositionOptionDefault:           (my:(horizontal: "center", vertical: "top"), at:(horizontal: "center", vertical: "top"), of: "window", collision: "none") !default;
@@ -920,14 +920,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //  type set to 'general' with position specified.
 
 // Specifies margin used for separating / spacing between two successive message boxes
-//$messageGeneralOverlaySeparatorMargin:    0px !default;
-//$messageGeneralOverlayBorderStyle:        solid !default;
-//$messageGeneralOverlayBorderWidth:        0px 0px $windowBorderWidth 0px !default;
-//$messageGeneralOverlayBorderColor:        $neutralColor9 !default;
-//$messageGeneralOverlayBorderRadius:       null !default;
-//$messageGeneralOverlayBoxShadow:          null !default;
-//$messageGeneralOverlayHeaderBgColor:      $neutralColor4 !default;
-//$messageGeneralOverlayBodyBgColor:        $neutralColor4 !default;
+//$messageGeneralOverlaySeparatorMargin:      0px !default;
+//$messageGeneralOverlayBorderStyle:          solid !default;
+//$messageGeneralOverlayBorderWidth:          0px 0px $windowBorderWidth 0px !default;
+//$messageGeneralOverlayBorderColor:          $neutralColor9 !default;
+//$messageGeneralOverlayBorderRadius:         null !default;
+//$messageGeneralOverlayBoxShadow:            null !default;
+//$messageGeneralOverlayHeaderBgColor:                    $neutralColor1 !default;
+//$messageGeneralOverlayBodyBgColor:                      $neutralColor1 !default;
 
 // Variables to override the default animation of individual oj-message.
 //$messageGeneralOverlayOpenAnimation:                    (effect: "expand", duration: "300ms") !default;
@@ -937,8 +937,8 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //  to 'notification' with position specified.
 
 //$messagesNotificationOverlayWidth:                      30vw !default;
-//$messagesNotificationOverlayMinWidth:     307px !default;
-//$messagesNotificationOverlayMaxWidth:     768px !default;
+//$messagesNotificationOverlayMinWidth:       320px !default;
+//$messagesNotificationOverlayMaxWidth:       400px !default;
 //$messagesNotificationOverlayBorderStyle:                null !default;
 //$messagesNotificationOverlayBorderWidth:                null !default;
 //$messagesNotificationOverlayBorderColor:                null !default;
@@ -950,14 +950,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //  type set to 'notification' with position specified.
 
 // Specifies margin used for separating / spacing between two successive message boxes
-//$messageNotificationOverlaySeparatorMargin:             8px !default;
-//$messageNotificationOverlayBorderStyle:                 null !default;
-//$messageNotificationOverlayBorderWidth:                 null !default;
-//$messageNotificationOverlayBorderColor:                 null !default;
+//$messageNotificationOverlaySeparatorMargin: 10px !default;
+//$messageNotificationOverlayBorderStyle:     solid !default;
+//$messageNotificationOverlayBorderWidth:     $windowBorderWidth !default;
+//$messageNotificationOverlayBorderColor:     $neutralColor9 !default;
 //$messageNotificationOverlayBorderRadius:                $smallBorderRadius !default;
 //$messageNotificationOverlayBoxShadow:                   $smallBoxShadow !default;
-//$messageNotificationOverlayHeaderBgColor: $neutralColor4 !default;
-//$messageNotificationOverlayBodyBgColor:   $neutralColor4 !default;
+//$messageNotificationOverlayHeaderBgColor:               $neutralColor1 !default;
+//$messageNotificationOverlayBodyBgColor:                 $neutralColor1 !default;
 //$messageNotificationOverlayOpenAnimation:               (effect: "slideIn", duration: "300ms") !default;
 //$messageNotificationOverlayCloseAnimation:              (effect: "slideOut", duration: "300ms", direction: "end") !default;
 
@@ -988,19 +988,19 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // The following variables apply to individual oj-message regardless of the display type and
 //  position of its oj-message parent
-//$messageHeaderHeight:                                   auto !default;
-//$messageCloseIconDisplay:                               none !default;
-//$messageCategoryTextColor:                              $secondaryTextColor !default;
-//$messageCategoryFontSize:                 oj-px-to-rem(12px, $baseFontSize: 16px) !default;
-//$messageTimeTextColor:                                  $secondaryTextColor !default;
-//$messageTimeFontSize:                     oj-px-to-rem(12px, $baseFontSize: 16px) !default;
+//$messageHeaderHeight:                       36px !default;
+//$messageCloseIconDisplay:                   block !default;
+//$messageCategoryTextColor:                  $formControlLabelColor !default;
+//$messageCategoryFontSize:                   oj-px-to-rem(11px, $baseFontSize: 14px)  !default;
+//$messageTimeTextColor:                      $textColor !default;
+//$messageTimeFontSize:                                   null !default;
 //$messageSummaryTextColor:                               $primaryTextColor !default;
-//$messageSummaryFontSize:                  oj-px-to-rem(14px, $baseFontSize: 16px) !default;
-//$messageSummaryFontWeight:                400 !default;
-//$messageSummaryLineHeight:                1.1 !default;
-//$messageDetailTextColor:                                $secondaryTextColor !default;
-//$messageDetailFontSize:                   oj-px-to-rem(14px, $baseFontSize: 16px) !default;
-//$messageDetailLineHeight:                 1.1 !default;
+//$messageSummaryFontSize:                                null !default;
+//$messageSummaryFontWeight:                              500 !default;
+//$messageSummaryLineHeight:                  1.3 !default;
+//$messageDetailTextColor:                    $textColor !default;
+//$messageDetailFontSize:                                 null !default;
+//$messageDetailLineHeight:                   1.1 !default;
 
 // Variable to override the default auto-timeout attribute of individual message
 //$messageAutoTimeoutOptionDefault:                       4000 !default;
@@ -1045,16 +1045,16 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // APPLICATION LAYOUT - HYBRID
 //-------------------------------------------------------------
 // Padding
-//$appLayoutHybridPadding: 1rem !default;
+//$appLayoutHybridPadding:  oj-px-to-rem(10px, $baseFontSize: 16px) !default;
 
 // Header
 //$appLayoutHybridHeaderTextColor: $textColor !default;
-//$appLayoutHybridHeaderBorderColor: $neutralColor8 !default;
+//$appLayoutHybridHeaderBorderColor: $neutralColor7 !default;
 //$appLayoutHybridHeaderBgColor: $neutralColor5 !default;
 // We don't want header height to be relative to root font size so using a fixed px
-//$appLayoutHybridHeaderMinHeight: 56px !default;
-//$appLayoutHybridHeaderBoxShadow: 0 1px 3px rgba(0,0,0,.3) !default;
-//$appLayoutHybridHeaderTitleFontSize: oj-px-to-rem(20px, $baseFontSize: 16px) !default;
+//$appLayoutHybridHeaderMinHeight: 44px !default;
+//$appLayoutHybridHeaderBoxShadow: none !default;
+//$appLayoutHybridHeaderTitleFontSize:  oj-px-to-rem(18px, $baseFontSize: 16px) !default;
 //$appLayoutHybridHeaderTitleFontWeight: $headerFontWeight !default;
 
 // Footer
@@ -1064,7 +1064,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$appLayoutHybridFooterMinHeight: 48px !default;
 
 // Nav Bar
-//$appLayoutHybridNavBarBoxShadow: 0 -10px 10px rgba(0,0,0,.05) !default;
+//$appLayoutHybridNavBarBoxShadow: none !default;
 
 // Nav Drawer
 //$appLayoutHybridOffcanvasBgColor: $appLayoutWebOffcanvasBgColor !default;
@@ -1073,7 +1073,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // OFFCANVAS
 //----------------------------------------
 // options
-//$offcanvasDisplayModeOptionDefault: overlay !default;
+//$offcanvasDisplayModeOptionDefault: push !default;
 
 
 // MENU
@@ -1092,11 +1092,11 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // Note that this only applies to swipes starting on the menu, since any touch
 // outside the menu will dismiss, regardless of whether it turns into a swipe.
 // Valid values are "dismiss" and "none".
-//$menuSheetSwipeDownBehavior: "dismiss" !default;
+//$menuSheetSwipeDownBehavior: "none" !default;
 
 // Controls whether a "glass pane" is displayed behind dropDown menus.
 // Valid values are "modal" and "modeless".
-//$menuDropDownModality: "modal" !default;
+//$menuDropDownModality: "modeless" !default;
 
 // Controls whether a "glass pane" is displayed behind sheet menus.
 // Valid values are "modal" and "modeless".
@@ -1108,17 +1108,17 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // Need rems, not ems, since we set icon font size (and if we didn't, app often would).
 
 // applies to menu items in a text-only menu, i.e. a menu where no item has a start icon (but might have a submenu icon) :
-//$menuTextToEdgePadding:               oj-px-to-rem(14px, $baseFontSize: 16px) !default; // Per UX, decrease 16px spec value by 2px, so looks like 16px in UX's screen measuring tool
+//$menuTextToEdgePadding:   calc(#{$menuIconToEdgePadding} + #{$menuIconSize} + #{$menuTextToIconPadding}) !default; // Alta spec leaves a space for icons even if no item in the menu has an icon
 // non-null supported values for $menuTextOnlyJustifyContent are "flex-start" and "center".
 //$menuTextOnlyJustifyContent:           null !default;
 
 // these vars apply to menu items in a menu where at least one item has a start icon (as opposed to submenu icon) :
-//$menuIconSize:                        24px !default; // per theming discussion, force it to size required by spec, but don't grow/shrink via rems in case of artifacts, and DO scale the surrounding space via rems.
-//$menuIconToEdgePadding:               oj-px-to-rem(20px, $baseFontSize: 16px) !default;
-//$menuTextToIconPadding:               oj-px-to-rem(18px, $baseFontSize: 16px) !default; // Per UX, decrease 20px spec value by 2px, so looks like 20px in UX's screen measuring tool
+//$menuIconSize:                         16px !default; // per theming discussion, force it to size required by Alta spec, but don't grow/shrink via rems in case of artifacts, and DO scale the surrounding space via rems.
+//$menuIconToEdgePadding:                oj-px-to-rem(8px, $baseFontSize: 14px) !default;
+//$menuTextToIconPadding:                $menuIconToEdgePadding !default;
 
 // padding on both left and right of submenu icon:
-//$menuSubmenuIconPadding:              oj-px-to-rem(11px, $baseFontSize: 16px) !default;
+//$menuSubmenuIconPadding:               0 !default; // end-aligned per Alta spec
 
 
 // menu parts
@@ -1127,40 +1127,40 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // menus (.oj-menu), whether top-level or submenu
 //$menuBorderWidth:                      1px !default;
 //$menuBorderColor:                      $popupBorderColor !default;
-//$menuBorderRadius:                    1px !default;
+//$menuBorderRadius:                     null !default;
 //$menuBgColor:                          $popupBgColor !default;
-//$menuPadding:                         oj-px-to-rem(8px, $baseFontSize: 16px) !default;
+//$menuPadding:                          null !default; // top/bottom padding
 
 // top-level menus (.oj-menu.oj-component)
-//$menuBoxShadow:                        0 2px 5px transparentize($boxShadowColor,0.75) !default;
+//$menuBoxShadow:           $smallBoxShadow !default;
 
 // submenus (.oj-menu.oj-menu-submenu)
-//$menuSubmenuBoxShadow:                 0 3px 7px transparentize($boxShadowColor,0.75) !default;
+//$menuSubmenuBoxShadow:    $menuBoxShadow !default;
 
 // menu items (.oj-menu-item) and their anchors
-//$menuItemBorderColor:                 transparent !default;
-//$menuItemTextColor:                   $primaryTextColor !default;
-//$menuItemLineHeight:                  48/16 !default; // 48px @16px font
+//$menuItemBorderColor:                  null !default;
+//$menuItemTextColor:                    $primaryTextColor !default;
+//$menuItemLineHeight:                   2.5 !default; // 30px @12px font, per Alta spec, 35px @14px font.
 
 // disabled menu items and their anchors
-//$menuItemTextColorDisabled:           $textColorDisabled !default;
+//$menuItemTextColorDisabled:            $textColorDisabled !default;
 
 // focused menu items (.oj-focus) and their ancestor menu items (.oj-focus-ancestor)
-//$menuItemBgColorFocus:                $neutralColor5 !default;
-//$menuItemBorderColorFocus:            $neutralColor11 !default; // TODO: dataGrid uses this color too, but no Android global var for it.  Should there be one?
+//$menuItemBgColorFocus:                 $neutralColor6 !default;
+//$menuItemBorderColorFocus:             null !default;
 
 // menu icons (.oj-menu-item-icon), not submenu icons
-//$menuIconColor:                       $brandColor !default;
+//$menuIconColor:                        $iconColorDefault !default;
 
 // disabled menu icons, not submenu icons
-//$menuIconColorDisabled:                null !default;
+//$menuIconColorDisabled:   $iconColorDisabled !default;
 //$menuIconOpacityDisabled:              $opacityDisabled !default;
 
 // submenu icons
-//$menuSubmenuIconColor:                $iconColorDefault !default;
+//$menuSubmenuIconColor:                 null !default;
 
 // menu group dividers (.oj-menu-divider, different than the border that iOS puts between every menu item)
-//$menuDividerMargin:                    0 !default;
+//$menuDividerMargin:       1px !default; // This spacing is on all 4 sides, including left/right, per Alta spec. rem not em since font-size 0.
 //$menuDividerBorderWidth:               1px !default;
 //$menuDividerBorderColor:               $menuBorderColor !default;
 
@@ -1169,25 +1169,25 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //----------------------------------
 
 // sheet menus (.oj-menu-sheet)
-//$menuSheetFontSize:                   oj-px-to-rem(17px, $baseFontSize: 16px) !default;
+//$menuSheetFontSize:                    $fontSize !default;
 //$menuSheetBorderRadius:                $menuBorderRadius !default;
 //$menuSheetBgColor:                     $menuBgColor !default;
-//$menuSheetMarginHorizontal:           oj-px-to-rem(16px, $baseFontSize: 16px) !default;
+//$menuSheetMarginHorizontal:            0 !default;
 // $menuSheetMarginBottom value must be 0, px, or %, e.g. 0, 10px, 5%
-//$menuSheetMarginBottom:                0 !default;
+//$menuSheetMarginBottom:   14px !default; // value must be 0, px, or %, e.g. 0, 10px, 5%
 
 // sheet menu items (.oj-menu-item) and their anchors
 //$menuSheetItemBorderColor:             $menuItemBorderColor !default;
 //$menuSheetItemBgColor:                 null !default;
-//$menuSheetItemTextColor:              $secondaryTextColor !default;
-//$menuSheetItemLineHeight:             48/17 !default; // 48px @17px font
+//$menuSheetItemTextColor:               $menuItemTextColor !default;
+//$menuSheetItemLineHeight:              $menuItemLineHeight !default;
 
 // disabled sheet menu items and their anchors
 //$menuSheetItemTextColorDisabled:       $menuItemTextColorDisabled !default;
 
 // focused sheet menu items (.oj-focus)
 //$menuSheetItemBgColorFocus:            $menuItemBgColorFocus !default;
-//$menuSheetItemBorderColorFocus:       transparent !default;
+//$menuSheetItemBorderColorFocus:        $menuItemBorderColorFocus !default;
 
 // cancel menu item (.oj-menu-item-cancel) and its anchor
 //$menuSheetItemCancelFontWeight:        null !default;
@@ -1219,83 +1219,83 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // BUTTONS
 //-----------------------------------------------------------------------------
 
-//$buttonFontWeight:   500 !default; // per MDN, medium is roughly 500
-//$buttonBorderRadius: $mediumBorderRadius !default; // 2px
+//$buttonFontWeight:   normal !default;
+//$buttonBorderRadius: $mediumBorderRadius !default;
 //$buttonCursor:       default !default;
 
-//$buttonHeight:       oj-px-to-rem(36px, $baseFontSize: 16px) !default;
-//$buttonSmallHeight:  $buttonHeight * (24px/36px) !default;
-//$buttonLargeHeight:  $buttonHeight * (46px/36px) !default;
-//$buttonXlargeHeight: $buttonHeight * (52px/36px) !default;
+//$buttonHeight:       oj-px-to-rem(32px, $baseFontSize: 14px) !default;
+//$buttonSmallHeight:  $buttonHeight * .875 !default;
+//$buttonLargeHeight:  $buttonHeight * 1.3125 !default;
+//$buttonXlargeHeight: $buttonHeight * 1.5 !default;
 
-//$buttonFontSize:       oj-px-to-rem(18px, $baseFontSize: 16px) !default;
-//$buttonSmallFontSize:  $buttonFontSize !default; // 14px when root 16px
-//$buttonLargeFontSize:  oj-px-to-rem(20px, $baseFontSize: 16px) !default;
-//$buttonXlargeFontSize: oj-px-to-rem(22px, $baseFontSize: 16px) !default; // not spec'd.  In AltaWeb is 2px bigger than large, so go with 22px since Android large is 20px.
+//$buttonFontSize:       $fontSize !default;
+//$buttonSmallFontSize:  $buttonFontSize !default;
+//$buttonLargeFontSize:  $buttonFontSize !default;
+//$buttonXlargeFontSize: $buttonFontSize !default;
 
 
 // button padding
 //----------------------------------
 // Horiz space between text and edge of button when no intervening icon.
-//$buttonTextToEdgePadding:       oj-px-to-rem(8px, $baseFontSize: 16px) !default;
-//$buttonSmallTextToEdgePadding:  $buttonTextToEdgePadding !default;
-//$buttonLargeTextToEdgePadding:  oj-px-to-rem(16px, $baseFontSize: 16px) !default;
-//$buttonXlargeTextToEdgePadding: $buttonLargeTextToEdgePadding !default; // no spec, so make same as large
+//$buttonTextToEdgePadding:       oj-px-to-rem(13px, $baseFontSize: 14px) !default;
+//$buttonSmallTextToEdgePadding:  oj-px-to-rem(11px, $baseFontSize: 14px) !default;
+//$buttonLargeTextToEdgePadding:  oj-px-to-rem(20px, $baseFontSize: 14px) !default;
+//$buttonXlargeTextToEdgePadding: $buttonLargeTextToEdgePadding !default;
 
 // Horiz space between text and icon.
-//$buttonIconToTextPadding:       oj-px-to-rem(8px, $baseFontSize: 16px) !default;
-//$buttonSmallIconToTextPadding:  oj-px-to-rem(6px, $baseFontSize: 16px) !default;
-//$buttonLargeIconToTextPadding:  oj-px-to-rem(12px, $baseFontSize: 16px) !default;
-//$buttonXlargeIconToTextPadding: oj-px-to-rem(10px, $baseFontSize: 16px) !default;
+//$buttonIconToTextPadding:       oj-px-to-rem(6px, $baseFontSize: 14px) !default;
+//$buttonSmallIconToTextPadding:  $buttonIconToTextPadding !default;
+//$buttonLargeIconToTextPadding:  $buttonIconToTextPadding !default;
+//$buttonXlargeIconToTextPadding: $buttonLargeIconToTextPadding !default;
 
 // Horiz space between icon and edge of button when text also showing.
-//$buttonIconToEdgePadding:       oj-px-to-rem(10px, $baseFontSize: 16px) !default;
-//$buttonSmallIconToEdgePadding:  oj-px-to-rem(8px, $baseFontSize: 16px) !default;
-//$buttonLargeIconToEdgePadding:  oj-px-to-rem(12px, $baseFontSize: 16px) !default;
-//$buttonXlargeIconToEdgePadding: oj-px-to-rem(16px, $baseFontSize: 16px) !default;
+//$buttonIconToEdgePadding:       oj-px-to-rem(12px, $baseFontSize: 14px) !default;
+//$buttonSmallIconToEdgePadding:  oj-px-to-rem(11px, $baseFontSize: 14px) !default;
+//$buttonLargeIconToEdgePadding:  oj-px-to-rem(15px, $baseFontSize: 14px) !default;
+//$buttonXlargeIconToEdgePadding: $buttonLargeIconToEdgePadding !default;
 
 // Horiz space between icon and edge of button when icon only.
-//$buttonIconOnlyPadding:       $buttonIconToEdgePadding !default;
-//$buttonSmallIconOnlyPadding:  $buttonSmallIconToEdgePadding !default;
-//$buttonLargeIconOnlyPadding:  $buttonLargeIconToEdgePadding !default;
-//$buttonXlargeIconOnlyPadding: $buttonXlargeIconToEdgePadding !default;
+//$buttonIconOnlyPadding:       oj-px-to-rem(8px, $baseFontSize: 14px) !default;
+//$buttonSmallIconOnlyPadding:  oj-px-to-rem(6px, $baseFontSize: 14px) !default;
+//$buttonLargeIconOnlyPadding:  oj-px-to-rem(12px, $baseFontSize: 14px) !default;
+//$buttonXlargeIconOnlyPadding: oj-px-to-rem(14px, $baseFontSize: 14px) !default;
 
 
 
 // button states
 //----------------------------------
 // default
-//$buttonBgColor:                   $brandColorDark1 !default;
-//$buttonTextColor:                 $contrastTextColor !default;
-//$buttonIconColor:                 $buttonTextColor !default;
-//$buttonBorderColor:               $buttonBgColor!default;
-//$buttonInternalBorderColor:         $neutralColor10 !default;
+//$buttonBgColor:                   $neutralColor6 !default;
+//$buttonTextColor:                 $textColor1 !default;
+//$buttonIconColor:                 $iconColorDefault !default;
+//$buttonBorderColor:               $neutralColor9 !default;
+//$buttonInternalBorderColor:       $neutralColor9 !default;
 //$buttonBgImage:                   none !default;
-//$buttonTextShadow:                none !default;
-//$buttonBoxShadow:                 0 1px 3px rgba(0,0,0,.4) !default;
+//$buttonTextShadow:                null !default;
+//$buttonBoxShadow:                 null !default;
 
 // hover
-//$buttonBgColorHover:              $brandColorLight1  !default;
-//$buttonTextColorHover:            $buttonTextColor !default;
-//$buttonIconColorHover:            $buttonTextColorHover !default;
-//$buttonBorderColorHover:          $buttonBgColorHover !default;
+//$buttonBgColorHover:              $neutralColor4 !default;
+//$buttonTextColorHover:            $brandColorDark1 !default;
+//$buttonIconColorHover:            $iconColorHover !default;
+//$buttonBorderColorHover:          $buttonBorderColor !default;
 //$buttonBgImageHover:              null !default;
 //$buttonTextShadowHover:           null !default;
 //$buttonBoxShadowHover:            $buttonBoxShadow !default;
 
 // active
-//$buttonBgColorActive:               $brandColorDark1  !default;
-//$buttonTextColorActive:           $buttonTextColor !default;
+//$buttonBgColorActive:             $brandColor !default;
+//$buttonTextColorActive:           $neutralColor1 !default;
 //$buttonIconColorActive:           $buttonTextColorActive !default;
-//$buttonBorderColorActive:         $buttonBgColorActive !default;
-//$buttonInternalBorderColorActive: $buttonInternalBorderColor !default;
+//$buttonBorderColorActive:         $brandColor !default;
+//$buttonInternalBorderColorActive: $buttonBorderColor !default;
 //$buttonBgImageActive:             null !default;
 //$buttonTextShadowActive:          null !default;
 //$buttonBoxShadowActive:           $buttonBoxShadow !default;
 //$buttonOpacityActive:             null !default;
 
 // selected - default to use active values
-//$buttonBgColorSelected:           $brandColorDark2   !default;
+//$buttonBgColorSelected:           $buttonBgColorActive !default;
 //$buttonTextColorSelected:         $buttonTextColorActive !default;
 //$buttonIconColorSelected:         $buttonIconColorActive !default;
 //$buttonBorderColorSelected:       $buttonBorderColorActive !default;
@@ -1305,25 +1305,25 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$buttonBoxShadowSelected:         $buttonBoxShadowActive !default;
 
 // selected and hovered
-//$buttonTextColorSelectedHover:    $contrastTextColor !default;
-//$buttonIconColorSelectedHover:    $buttonTextColorSelectedHover !default;
-//$buttonBgColorSelectedHover:      $brandColorLight2 !default;
-//$buttonBorderColorSelectedHover:  $buttonBgColorSelectedHover !default;
+//$buttonTextColorSelectedHover:    $buttonIconColorHover !default;
+//$buttonIconColorSelectedHover:    $buttonIconColorHover !default;
+//$buttonBgColorSelectedHover:      null !default;
+//$buttonBorderColorSelectedHover:  null !default;
 
 // disabled
-//$buttonBgColorDisabled:           $neutralColor9 !default;
-//$buttonTextColorDisabled:           $textColorDisabled !default;
-//$buttonIconColorDisabled:         $buttonTextColorDisabled !default;
-//$buttonBorderColorDisabled:       $buttonBgColorDisabled !default;
+//$buttonBgColorDisabled:           $neutralColor4 !default;
+//$buttonTextColorDisabled:         $textColorDisabled !default;
+//$buttonIconColorDisabled:         $iconColorDisabled !default;
+//$buttonBorderColorDisabled:       $neutralColor7 !default;
 //$buttonOpacityDisabled:           $opacityDisabled !default;
-//$buttonBoxShadowDisabled:         $buttonBoxShadow !default;
+//$buttonBoxShadowDisabled:         none !default;
 
 // disabled and selected
-//$buttonTextColorSelectedDisabled:   $neutralColor3 !default;
+//$buttonTextColorSelectedDisabled:            $buttonTextColorSelected !default;
 //$buttonIconColorSelectedDisabled:            $buttonTextColorSelectedDisabled !default;
-//$buttonBgColorSelectedDisabled:     $neutralColor10  !default;
+//$buttonBgColorSelectedDisabled:              $neutralColor9 !default;
 //$buttonBorderColorSelectedDisabled:          $buttonBgColorSelectedDisabled !default;
-//$buttonInternalBorderColorSelectedDisabled:  $buttonInternalBorderColor !default;
+//$buttonInternalBorderColorSelectedDisabled:  $buttonBorderColorDisabled !default;
 
 
 // button chroming
@@ -1335,23 +1335,23 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // the button icon color spec, which applies to buttons with chrome.
 
 // chroming option defaulting
-//$buttonChromingOptionDefault: half !default;
+//$buttonChromingOptionDefault: full !default;
 
 // half chrome
-//$buttonHalfChromeFontWeight:              $buttonFontWeight !default;
+//$buttonHalfChromeFontWeight:              normal !default; // from Alta menu spec, half-chrome button section
 
 // half chrome default
-//$buttonHalfChromeTextColor:               $buttonBgColor !default;
-//$buttonHalfChromeIconColor:               $buttonHalfChromeTextColor !default;
+//$buttonHalfChromeTextColor:               $buttonTextColor !default;
+//$buttonHalfChromeIconColor:           $iconColorDefault !default;
 
 // half chrome hover
-//$buttonHalfChromeTextColorHover:          $brandColorLight1 !default;
-//$buttonHalfChromeIconColorHover:          $buttonHalfChromeTextColorHover !default;
-//$buttonHalfChromeBgColorHover:            transparent !default;
-//$buttonHalfChromeBorderColorHover:        $buttonHalfChromeBgColorHover !default;
+//$buttonHalfChromeTextColorHover:          $buttonTextColorHover !default;
+//$buttonHalfChromeIconColorHover:          $buttonIconColorHover !default;
+//$buttonHalfChromeBgColorHover:            $buttonBgColorHover !default;
+//$buttonHalfChromeBorderColorHover:        $buttonBorderColorHover !default;
 
 // half chrome active
-//$buttonHalfChromeTextColorActive:         $buttonTextColor !default;
+//$buttonHalfChromeTextColorActive:         $buttonTextColorActive !default;
 //$buttonHalfChromeIconColorActive:         $buttonHalfChromeTextColorActive !default;
 //$buttonHalfChromeBgColorActive:           $buttonBgColorActive !default;
 //$buttonHalfChromeBorderColorActive:       $buttonHalfChromeBgColorActive !default;
@@ -1364,14 +1364,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$buttonHalfChromeBorderColorSelected:     $buttonHalfChromeBgColorSelected !default;
 
 // half chrome selected and hovered
-//$buttonHalfChromeTextColorSelectedHover:  $buttonTextColor !default;
+//$buttonHalfChromeTextColorSelectedHover:  $buttonTextColorSelectedHover !default;
 //$buttonHalfChromeIconColorSelectedHover:  $buttonHalfChromeTextColorSelectedHover !default;
-//$buttonHalfChromeBgColorSelectedHover:    $buttonBgColorHover !default;
-//$buttonHalfChromeBorderColorSelectedHover:  $buttonHalfChromeBgColorSelectedHover !default;
+//$buttonHalfChromeBgColorSelectedHover:    null !default;
+//$buttonHalfChromeBorderColorSelectedHover:  null !default;
 
 // half chrome disabled
-//$buttonHalfChromeTextColorDisabled:       $textColorDisabled !default;
-//$buttonHalfChromeIconColorDisabled:       $buttonHalfChromeTextColorDisabled !default;
+//$buttonHalfChromeTextColorDisabled:       $buttonTextColorDisabled !default;
+//$buttonHalfChromeIconColorDisabled:       $iconColorDisabled !default;
 //$buttonHalfChromeOpacityDisabled:         $buttonOpacityDisabled !default;
 
 // half chrome disabled and selected
@@ -1386,21 +1386,21 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // outlined default
 //$buttonOutlinedChromeTextColor:               $buttonHalfChromeTextColor !default;
 //$buttonOutlinedChromeIconColor:               $buttonHalfChromeIconColor !default;
-//$buttonOutlinedChromeBorderColor:             $buttonOutlinedChromeTextColor !default;
-//$buttonOutlinedChromeInternalBorderColor:     null !default;
+//$buttonOutlinedChromeBorderColor:                  $buttonHalfChromeBorderColorHover !default;
+//$buttonOutlinedChromeInternalBorderColor:          $neutralColor9 !default;
 
 // outlined hover
 //$buttonOutlinedChromeTextColorHover:          $buttonHalfChromeTextColorHover !default;
 //$buttonOutlinedChromeIconColorHover:          $buttonHalfChromeIconColorHover !default;
-//$buttonOutlinedChromeBgColorHover:        $buttonHalfChromeBgColorHover !default;
-//$buttonOutlinedChromeBorderColorHover:    $brandColorLight1 !default;
+//$buttonOutlinedChromeBgColorHover:            $buttonHalfChromeBgColorHover !default;
+//$buttonOutlinedChromeBorderColorHover:             $buttonOutlinedChromeBorderColor !default;
 
 // outlined active
 //$buttonOutlinedChromeTextColorActive:         $buttonHalfChromeTextColorActive !default;
 //$buttonOutlinedChromeIconColorActive:         $buttonHalfChromeIconColorActive !default;
 //$buttonOutlinedChromeBgColorActive:           $buttonHalfChromeBgColorActive !default;
 //$buttonOutlinedChromeBorderColorActive:       $buttonHalfChromeBorderColorActive !default;
-//$buttonOutlinedChromeInternalBorderColorActive:  null !default;
+//$buttonOutlinedChromeInternalBorderColorActive:    $buttonInternalBorderColorActive !default;
 //$buttonOutlinedChromeOpacityActive:           $buttonHalfChromeOpacityActive !default;
 
 // outlined selected
@@ -1408,18 +1408,18 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$buttonOutlinedChromeIconColorSelected:       $buttonHalfChromeIconColorSelected !default;
 //$buttonOutlinedChromeBgColorSelected:         $buttonHalfChromeBgColorSelected !default;
 //$buttonOutlinedChromeBorderColorSelected:     $buttonHalfChromeBorderColorSelected !default;
-//$buttonOutlinedChromeInternalBorderColorSelected:  $buttonInternalBorderColor !default;
+//$buttonOutlinedChromeInternalBorderColorSelected:  $buttonInternalBorderColorSelected !default;
 
 // outlined selected and hovered
 //$buttonOutlinedChromeTextColorSelectedHover:  $buttonHalfChromeTextColorSelectedHover !default;
 //$buttonOutlinedChromeIconColorSelectedHover:  $buttonHalfChromeIconColorSelectedHover !default;
-//$buttonOutlinedChromeBgColorSelectedHover:      $buttonBgColorHover !default;
-//$buttonOutlinedChromeBorderColorSelectedHover:  $buttonOutlinedChromeBgColorSelectedHover !default;
+//$buttonOutlinedChromeBgColorSelectedHover:    null !default;
+//$buttonOutlinedChromeBorderColorSelectedHover:  null !default;
 
 // outlined disabled
-//$buttonOutlinedChromeTextColorDisabled:       $buttonBgColorDisabled !default;
-//$buttonOutlinedChromeIconColorDisabled:       $buttonBgColorDisabled !default;
-//$buttonOutlinedChromeBorderColorDisabled:     $buttonBgColorDisabled !default;
+//$buttonOutlinedChromeTextColorDisabled:       $buttonHalfChromeTextColorDisabled !default;
+//$buttonOutlinedChromeIconColorDisabled:       $buttonHalfChromeIconColorDisabled !default;
+//$buttonOutlinedChromeBorderColorDisabled:     $neutralColor9!default;
 //$buttonOutlinedChromeOpacityDisabled:         $buttonHalfChromeOpacityDisabled !default;
 
 // outlined disabled and selected
@@ -1427,7 +1427,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$buttonOutlinedChromeIconColorSelectedDisabled:    $buttonHalfChromeIconColorSelectedDisabled !default;
 //$buttonOutlinedChromeBgColorSelectedDisabled:      $buttonHalfChromeBgColorSelectedDisabled !default;
 //$buttonOutlinedChromeBorderColorSelectedDisabled:  $buttonHalfChromeBorderColorSelectedDisabled !default;
-//$buttonOutlinedChromeInternalBorderColorSelectedDisabled:  $buttonOutlinedChromeInternalBorderColorSelected !default;
+//$buttonOutlinedChromeInternalBorderColorSelectedDisabled:  $buttonOutlinedChromeBorderColorDisabled !default;
 
 
 // alternate button colors
@@ -1451,7 +1451,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // width
 //----------------------------------
 // auto width for all buttonset chroming
-//$buttonsetEqualWidthChromingList: full outlined !default; // default should be equal width buttonsets for these chroming values (auto width for all others)
+//$buttonsetEqualWidthChromingList: null !default; // default should be equal width buttonsets for these chroming values (auto width for all others)
 //$buttonsetEqualWidthOverallWidth: 100% !default; // default width of equal width buttonsets when app doesn't supply a width
 
 // DIALOG
@@ -1463,33 +1463,33 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // ojDialog resizeBehavior, cancelBehavior, and dragAffordance options
 // default to the programmatic settings.
-//$dialogResizeBehaviorOptionDefault: none !default;
-//$dialogCancelBehaviorOptionDefault: none !default;
-//$dialogDragAffordanceOptionDefault: none !default;
+//$dialogResizeBehaviorOptionDefault: resizable !default;
+//$dialogCancelBehaviorOptionDefault: icon !default;
+//$dialogDragAffordanceOptionDefault: title-bar !default;
 
-//$dialogBoxShadow:           $smallBoxShadow !default;
-//$dialogBorderRadius:        null !default;
+//$dialogBoxShadow:           $largeBoxShadow !default;
+//$dialogBorderRadius:        1px !default;
 //$dialogBorderWidth:         $windowBorderWidth !default;
 //$dialogBorderColor:         $windowBorderColor !default;
 //$dialogBgColor:             $windowBgColor !default;
 
-//$dialogHeaderPadding:       oj-px-to-rem(24px, $baseFontSize: 16px) oj-px-to-rem(24px, $baseFontSize: 16px) oj-px-to-rem(5px, $baseFontSize: 16px) !default;
-//$dialogBodyPadding:         oj-px-to-rem(5px, $baseFontSize: 16px) oj-px-to-rem(24px, $baseFontSize: 16px) oj-px-to-rem(20px, $baseFontSize: 16px) !default;
-//$dialogFooterPadding:       oj-px-to-rem(8px, $baseFontSize: 16px) oj-px-to-rem(8px, $baseFontSize: 16px) oj-px-to-rem(4px, $baseFontSize: 16px) !default;
+//$dialogHeaderPadding:       $panelPadding !default;
+//$dialogBodyPadding:         $panelPadding !default;
+//$dialogFooterPadding:       $panelPadding !default;
 
-//$dialogHeaderFontSize:      oj-px-to-rem(19px, $baseFontSize: 16px) !default;
-//$dialogHeaderBorderColor:   transparent !default;
-//$dialogHeaderBgColor:       transparent !default;
-//$dialogHeaderTextColor:     $textColor !default;
+//$dialogHeaderFontSize:      $header3FontSize !default;
+//$dialogHeaderBorderColor:   $windowBorderColor !default;
+//$dialogHeaderBgColor:       $headerBgColor !default;
+//$dialogHeaderTextColor:     $headerTextColor !default;
 //$dialogHeaderBgImage:       $headerBgImage !default;
 
 // Alignment of the dialog header text.
 // Possible values are and 'center' and 'start'
-//$dialogHeaderTextAlign:     start !default;
+//$dialogHeaderTextAlign:     startSingleRow !default;
 // Vertical position of the close icon.
 // Possible values are 'top' and 'center'
 // (the close icon is always on the right in ltr)
-//$dialogCloseIconPosition:  top !default;
+//$dialogCloseIconPosition:   center !default;
 //$dialogCloseIconButtonMargin:  null !default;
 
 //$dialogBodyTextAlign:       start !default;
@@ -1523,9 +1523,9 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 
 // outer border
-//$formLayoutBorderColor:  $neutralColor7 !default;
+//$formLayoutBorderColor:  null !default;
 // divider between rows
-//$formLayoutDividerColor: $neutralColor8 !default;
+//$formLayoutDividerColor: null !default;
 
 // These variables are used to set the column-width/column-gap properties
 // in .oj-form-cols and .oj-form-cols-labels-inline.
@@ -1543,16 +1543,16 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // inline label in a oj-flex > oj-flex-item; we do not float, thus we need line-height
 // to maintain label's height, and we need a different top margin for this case.
-//$formLayoutLabelInlineMarginTop: .5em !default;
+//$formLayoutLabelInlineMarginTop: .4em !default;
 
 // in a form layout when the labels are inline what is the
 // default label alignment, legal values are start and end
-//$formLayoutLabelInlineAlign: null !default;
+//$formLayoutLabelInlineAlign: end !default;
 
 
 // in a form layout when the labels are inline what is the
 // default field alignment, legal values are start and end
-//$formLayoutFieldInlineAlign: end !default;
+//$formLayoutFieldInlineAlign: null !default;
 
 
 // FORM CONTROLS
@@ -1564,9 +1564,9 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // label required content character.
 // If it is not needed (like you want to use pure css instead), set to ''.
-//$formControlLabelRequiredChar: '' !default;
+//$formControlLabelRequiredChar: '*' !default;
 //$formControlLabelFontWeight: normal !default;
-//$formControlLabelFontSize:   $smallestFontSize !default;
+//$formControlLabelFontSize:   null !default;
 
 // top aligned labels
 //----------------------------------
@@ -1580,7 +1580,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //----------------------------------
 
 // gutter (padding) between the inline label and the control
-//$formControlLabelInlineGutter:     1rem !default;
+//$formControlLabelInlineGutter:     .5em !default;
 
 // top margin on the inline label, generally this
 // distance is to align the label text with an input's text.
@@ -1593,11 +1593,11 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // $formControlInput* variables apply to
 // input style form controls, like input text
-//$formControlInputHeight:   oj-px-to-rem(28px, $baseFontSize: 16px) !default;
+//$formControlInputHeight:      $buttonHeight !default; // make the form controls and buttons the same height so they line up nicely
 
 // $formControlTrigger* variables apply to
 // trigger style form controls, which triggers some type of picker, like a select or date
-//$formControlTriggerHeight: oj-px-to-rem(32px, $baseFontSize: 16px) !default;
+//$formControlTriggerHeight: $formControlInputHeight !default;
 
 // On form controls we use a width of 100% and then set a max and
 // min width so that when there's less room for the form control it
@@ -1605,19 +1605,19 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // This forces us to set some sort of default max-width
 // which can be overridden on the instance by setting a style
 // or class using the rootAttributes option.
-//$formControlLargeMaxWidth:  100% !default;
-//$formControlMediumMaxWidth: 100% !default;
+//$formControlLargeMaxWidth:  18em !default;
+//$formControlMediumMaxWidth: 15em !default;
 //$formControlMinWidth:       8em !default;
 
 
 
 // form control common
 //----------------------------------
-//$formControlBorderRadius:    0 !default;
-//$formControlBorderWidth: 0 0 1px !default;
+//$formControlBorderRadius:  $mediumBorderRadius !default;
+//$formControlBorderWidth:   1px !default;
 
 // controls the horizontal padding inside an input
-//$formControlPaddingHorizontal: 0 !default;
+//$formControlPaddingHorizontal: 5px !default;
 
 // messaging border
 //$formControlMessagingBorderWidth: 2px !default;
@@ -1635,8 +1635,8 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //----------------------------------
 
 // *****default*****
-//$formControlBgColor:                    transparent !default;
-//$formControlBorderColor:                $neutralColor11 !default;
+//$formControlBgColor:             $neutralColor2 !default;
+//$formControlBorderColor:         $neutralColor7 !default;
 
 // $formControlInput* variables apply to
 // input style form controls, like input text
@@ -1650,54 +1650,54 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 
 // *****active*****
-//$formControlTriggerBgColorActive:       $neutralColor8 !default;
+//$formControlTriggerBgColorActive: null !default;
 
 
 // *****focus*****
-//$formControlInputBorderColorFocus:      $brandColor  !default;
-//$formControlInputBorderWidthFocus:      0 0 2px 0           !default;
+//$formControlInputBorderColorFocus:               null !default;
+//$formControlInputBorderWidthFocus:               null !default;
 
 // *****readonly*****
 //$formControlValueColorReadOnly:  $textColor !default;
 //$formControlFontSizeReadOnly:    $formControlInputFontSize !default;
-//$formControlFontWeightReadOnly:         bold !default;
+//$formControlFontWeightReadOnly:  null !default;
 
 // *****disabled*****
-//$formControlBgColorDisabled:            transparent !default;
-//$formControlValueColorDisabled:  $formControlInputValueColor !default;
-//$formControlBorderColorDisabled: $formControlBorderColor !default;
-//$formControlOpacityDisabled:     $opacityDisabled   !default;
+//$formControlBgColorDisabled:     $neutralColor6 !default;
+//$formControlValueColorDisabled:  $textColorDisabled !default;
+//$formControlBorderColorDisabled: $formControlBgColorDisabled !default;
+//$formControlOpacityDisabled: 1 !default;
 
 // *****placeholder*****
 //$formControlPlaceholderColor: $tertiaryTextColor !default;
-//$formControlPlaceholderFontStyle: null !default;
+//$formControlPlaceholderFontStyle: italic !default;
 
 // INPUT NUMBER
 // the spacing between the input and the buttonset
-//$inputNumberInputToButtonMargin: 16px !default;
+//$inputNumberInputToButtonMargin: 0 !default;
 //inputnumber up and down button width
-//$inputNumberButtonWidth: 50px;
+//$inputNumberButtonWidth: null !default;
 
 // RADIO and CHECKBOX
 // The input html element can be hidden the radio/checkbox rendered as an image instead
 // values are 'html' and 'backgroundImage'.
 //$radioCheckboxRenderInputAs: backgroundImage !default;
 // The label can be rendered before or after the input/image.
-//$radioCheckboxLabelPosition: start !default;
+//$radioCheckboxLabelPosition: end !default;
 
-//$radioCheckboxRowHeight: 3rem !default;
+//$radioCheckboxRowHeight: 1.9rem !default;
 
 // TODO Bug 25897533: Clean up after sprite tooling is implemented
 // image size
-//$radioCheckboxImageHeightWidth: $radioCheckboxRowHeight !default;
+//$radioCheckboxImageHeightWidth: 16px !default;
 
 // spacing between edge and the label text
-//$radioCheckboxLabelToEdgePadding: 16px !default;
+//$radioCheckboxLabelToEdgePadding: 22px !default;
 
 // spacing between edge and the input (html input or input image)
 //$radioCheckboxInputToEdgePadding: 0 !default;
 // spacing on the input (html input or input image) to give spacing between the input and the text
-//$radioCheckboxInputToLabelPadding: 0 !default;
+//$radioCheckboxInputToLabelPadding: .6rem !default;
 
 // TODO Bug 25897533: Clean up after sprite tooling is implemented
 // radioset and checkboxset image directory
@@ -1706,14 +1706,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // radioset and checkboxset states
 //----------------------------------
 //default
-//$radioCheckboxSetBorderColor:         $neutralColor7 !default;
-//$radioCheckboxSetBgColor:             $neutralColor4 !default;
-//$radioCheckboxItemDividerColor:       $neutralColor8 !default;
+//$radioCheckboxSetBorderColor: null !default;
+//$radioCheckboxSetBgColor: null !default;
+//$radioCheckboxItemDividerColor: transparent !default;
 //$radioCheckboxLabelColor: $textColor !default;
 
 // active
-//$radioCheckboxItemBgColorActive: $brandColorLight5 !default;
-//$radioCheckboxItemDividerColorActive: $neutralColor11 !default;
+//$radioCheckboxItemBgColorActive: transparent !default;
+//$radioCheckboxItemDividerColorActive: $radioCheckboxItemDividerColor !default;
 
 // selected
 //$radioCheckboxLabelColorSelected: null !default;
@@ -1722,30 +1722,30 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //----------------------------------------
 
 //options
-//$selectRenderModeOptionDefault: native !default;
+//$selectRenderModeOptionDefault: jet !default;
 
 //arrow
 // the right and left borders of the next two properties will be flipped in rtl languages
 //$selectArrowPadding: 0 5px !default;
 //$selectMultipleArrowPadding: 0 1px !default;
-//$selectArrowColor:              $iconColorDefault !default;
+//$selectArrowColor: null !default;
 
 // picker
-//$selectPickerBgColor:           $neutralColor1 !default;
+//$selectPickerBgColor: null !default;
 
 
 // INPUT TEXT, INPUT PASSWORD, TEXT AREA
 //-----------------------------------------------------------------------------
-//$inputTextBorderStyleDisabled:        none none dotted none !default;
+//$inputTextBorderStyleDisabled:   null !default;
 //$inputTextTextAlign: null !default;
-//$textAreaLineHeight:                  oj-px-to-rem(24px, $baseFontSize: 16px) !default;
+//$textAreaLineHeight:                      null !default;
 
 //INPUT SEARCH
 //--------------------------------------------------------------
 //$inputSearchBgColor: $formControlBgColor !default;
 //$inputSearchBgColorDisabled: $formControlBgColorDisabled !default;
-//$inputSearchIconPosition: start !default; // Possible values are 'start' and 'end'
-//$inputSearchIconPadding: 0 8px 0 0 !default;
+//$inputSearchIconPosition: end !default; // Possible values are 'start' and 'end'
+//$inputSearchIconPadding: 0 $formControlPaddingHorizontal 0 0 !default;
 
 
 // SLIDER
@@ -1758,11 +1758,11 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //   - Thumbs with borders
 
 // Thumb dimensions used in horizontal sliders.
-//$sliderThumbWidth:               12px !default;
+//$sliderThumbWidth:      24px !default;
 //$sliderThumbHeight:     $sliderThumbWidth !default;
 
 // Thumb dimensions for the active state.
-//$sliderThumbWidthActive:             18px !default;
+//$sliderThumbWidthActive:      $sliderThumbWidth !default;
 //$sliderThumbHeightActive:     $sliderThumbWidthActive !default;
 
 //$sliderThumbBorderWidth:          2px !default;
@@ -1773,16 +1773,16 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$sliderThumbHitArea:    28px !default;
 //$sliderBarHitArea:      36px !default;
 
-//$sliderBarThickness:    2px !default;
+//$sliderBarThickness:            4px !default;
 
 // colors for enabled state
-//$sliderThumbBgColor:             $brandColor !default;
-//$sliderThumbBorderColor:        $sliderThumbBgColor !default;
-//$sliderBarBgColor:               $neutralColor11 !default;
+//$sliderThumbBgColor:            $neutralColor1 !default;
+//$sliderThumbBorderColor:              $neutralColor11 !default;
+//$sliderBarBgColor:              $neutralColor8 !default;
 //$sliderBarValueBgColor:         $brandColor !default;
 
 // hover
-//$sliderThumbBgColorHover:        $sliderThumbBgColor !default;
+//$sliderThumbBgColorHover:       $neutralColor6 !default;
 
 // active
 //$sliderThumbBgColorActive:       $sliderThumbBgColorHover !default;
@@ -1790,10 +1790,10 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$sliderBarValueBgColorActive:    $sliderBarValueBgColor !default;
 
 // thumb disabled
-//$sliderThumbBgColorDisabled:     $neutralColor9 !default;
-//$sliderThumbBorderColorDisabled: $neutralColor1 !default;
-//$sliderBarBgColorDisabled:       $sliderBarBgColor !default;
-//$sliderBarValueBgColorDisabled:  $sliderBarBgColorDisabled !default;
+//$sliderThumbBgColorDisabled:          $neutralColor8 !default;
+//$sliderThumbBorderColorDisabled:      $sliderThumbBgColorDisabled !default;
+//$sliderBarBgColorDisabled:            $sliderThumbBgColorDisabled !default;
+//$sliderBarValueBgColorDisabled:       $sliderThumbBgColorDisabled !default;
 
 // Color picker variables
 //$sliderColorPickerBarThickness:         10px !default;
@@ -1803,7 +1803,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$sliderColorPickerThumbBorderColor:     white !default;
 //$sliderColorPickerThumbWidth:           24px !default;
 //$sliderColorPickerThumbHeight:          $sliderColorPickerThumbWidth !default;
-//$sliderColorPickerThumbWidthActive:  34px !default;
+//$sliderColorPickerThumbWidthActive:     $sliderColorPickerThumbWidth !default;
 //$sliderColorPickerThumbHeightActive:    $sliderColorPickerThumbWidthActive !default;
 //$sliderColorPickerThumbBoxShadow:       $mediumBoxShadow !default;
 
@@ -1844,116 +1844,116 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 
 // CONTAINER HEIGHT/WIDTH
-//$switchContainerHeight: $formControlTriggerHeight !default; // 2rem = 32px when base font 16px
-//$switchContainerWidth: $formControlTriggerHeight !default;
+//$switchContainerHeight: $formControlTriggerHeight !default;  // 2.286rem = 32px when base font 14px
+//$switchContainerWidth: $formControlTriggerHeight * 1.875 !default;
 
 // TRACK HEIGHT/WIDTH
-//$switchTrackHeight: $switchContainerHeight * 0.4375 !default; // 14px
-//$switchTrackWidth: $switchContainerHeight * 1.125 !default; // 36px
+//$switchTrackHeight: $switchContainerHeight !default; // 32px
+//$switchTrackWidth: $switchContainerHeight * 1.625 !default; // 52px
 
 // TRACK BORDERS
 //$switchTrackBorderWidth: 1px !default;
-//$switchTrackBorderWidthReadonly: 2px !default;
+//$switchTrackBorderWidthReadonly: $switchTrackBorderWidth !default;
 
 // THUMB BORDERS
 //$switchThumbBorderWidth: $switchTrackBorderWidth !default;
 //$switchThumbBorderWidthReadonly: $switchTrackBorderWidthReadonly !default;
 
 // ENABLED OFF
-//$switchThumbHeight: $switchContainerHeight* 0.625 !default; // 20px
+//$switchThumbHeight: $switchContainerHeight * 0.9375 !default; // 30px
 //$switchThumbWidth: $switchThumbHeight !default;
-//$switchThumbShadow: 0 3px 1px transparentize($boxShadowColor, .8), 0 0 8px transparentize($boxShadowColor, .8) !default;
+//$switchThumbShadow: 0 2px 2px -2px transparentize($boxShadowColor, .1) !default;
 // ----- COLORS -----
-//$switchTrackBgColor:                     $neutralColor12  !default;
-//$switchTrackBorderColor:                 $switchTrackBgColor !default; // #939393
-//$switchThumbBgColor:                     $neutralColor5 !default;
-//$switchThumbBorderColor:                 $switchThumbBgColor !default; // #f1f1f1
+//$switchTrackBgColor:                     $buttonBgColorHover !default;
+//$switchTrackBorderColor:                 $neutralColor7 !default;
+//$switchThumbBgColor:                     $neutralColor1 !default;
+//$switchThumbBorderColor:                 $neutralColor10 !default;
 
 // ENABLED ON
-//$switchThumbHeightSelected: $switchThumbHeight !default;
-//$switchThumbWidthSelected: $switchThumbHeight !default;
-//$switchThumbShadowSelected: $switchThumbShadow !default;
+//$switchThumbHeightSelected: $switchContainerHeight * 0.875 !default; // 28px
+//$switchThumbWidthSelected: $switchThumbHeightSelected !default;
+//$switchThumbShadowSelected: 0 2px 2px -2px $boxShadowColor !default;
 // ----- COLORS -----
-//$switchTrackBgColorSelected:             $brandColor !default; // #0572ce
-//$switchTrackBorderColorSelected:         $switchTrackBgColorSelected !default; // #0572ce
-//$switchThumbBgColorSelected:             $switchTrackBgColorSelected !default; // #0572ce
-//$switchThumbBorderColorSelected:         $switchTrackBgColorSelected !default; // #0572ce
+//$switchTrackBgColorSelected:             $brandColor !default;
+//$switchTrackBorderColorSelected:         $switchTrackBgColorSelected !default;
+//$switchThumbBgColorSelected:             $neutralColor1 !default;
+//$switchThumbBorderColorSelected:         $switchThumbBgColorSelected !default;
 
 // HOVER OFF
-//$switchThumbHeightHover: $switchContainerHeight * 1.5 !default; // 48px
-//$switchThumbWidthHover: $switchThumbHeightHover !default;
-//$switchThumbBorderWidthHover: $switchContainerHeight * 0.4375 !default; // 14px
+//$switchThumbHeightHover: $switchThumbHeight !default;
+//$switchThumbWidthHover: $switchThumbWidth !default;
+//$switchThumbBorderWidthHover: $switchThumbBorderWidth !default;
 // ----- COLORS -----
-//$switchTrackBgColorHover:                $switchTrackBgColor !default; // #939393
-//$switchTrackBorderColorHover:            $switchTrackBgColorHover !default; // #939393
-//$switchThumbBgColorHover:                $switchThumbBgColor !default; // #f1f1f1
-//$switchThumbBorderColorHover:            $neutralColor10  !default;
+//$switchTrackBgColorHover:                $neutralColor8 !default;
+//$switchTrackBorderColorHover:            $switchTrackBgColorHover !default;
+//$switchThumbBgColorHover:                $neutralColor2 !default;
+//$switchThumbBorderColorHover:            $switchThumbBorderColor !default;
 
 // HOVER ON
-//$switchThumbHeightSelectedHover: $switchThumbHeightHover !default;
-//$switchThumbWidthSelectedHover: $switchThumbHeightHover !default;
+//$switchThumbHeightSelectedHover: $switchThumbHeightSelected !default;
+//$switchThumbWidthSelectedHover: $switchThumbWidthSelected !default;
 //$switchThumbBorderWidthSelectedHover: $switchThumbBorderWidthHover !default;
 // ----- COLORS -----
-//$switchTrackBgColorSelectedHover:        $brandColor !default; // #0572ce
-//$switchTrackBorderColorSelectedHover:    $switchTrackBgColorSelectedHover !default; // #0572ce
-//$switchThumbBgColorSelectedHover:        $switchTrackBgColorSelectedHover !default; // #0572ce
-//$switchThumbBorderColorSelectedHover:    $brandColorLight2  !default; // #c4e4ff
+//$switchTrackBgColorSelectedHover:        $iconColorHover !default;
+//$switchTrackBorderColorSelectedHover:    $switchTrackBgColorSelectedHover !default;
+//$switchThumbBgColorSelectedHover:        $switchThumbBgColor !default;
+//$switchThumbBorderColorSelectedHover:    $switchThumbBgColorSelectedHover !default;
 
 // ACTIVE OFF
-//$switchThumbHeightActive: $switchThumbHeightHover !default;
-//$switchThumbWidthActive: $switchThumbWidthHover !default;
+//$switchThumbHeightActive: $switchThumbHeight !default;
+//$switchThumbWidthActive: $switchContainerHeight * 1.0625 !default; // 34px
 //$switchThumbBorderWidthActive: $switchThumbBorderWidthHover !default;
 // ----- COLORS -----
-//$switchTrackBgColorActive:                $switchTrackBgColorHover !default; // #939393
-//$switchTrackBorderColorActive:            $switchTrackBorderColorHover !default; // #939393
-//$switchThumbBgColorActive:                $switchThumbBgColorHover !default; // #f1f1f1
-//$switchThumbBorderColorActive:            $switchThumbBorderColorHover !default; // #c4c4c5
+//$switchTrackBgColorActive:                $switchTrackBgColor !default;
+//$switchTrackBorderColorActive:            $switchTrackBorderColor !default;
+//$switchThumbBgColorActive:                $switchThumbBgColor !default;
+//$switchThumbBorderColorActive:            $switchThumbBorderColor !default;
 
 // ACTIVE ON
-//$switchThumbHeightSelectedActive: $switchThumbHeightHover !default;
-//$switchThumbWidthSelectedActive: $switchThumbWidthHover !default;
+//$switchThumbHeightSelectedActive: $switchThumbHeightSelected !default;
+//$switchThumbWidthSelectedActive: $switchThumbWidthActive !default;
 //$switchThumbBorderWidthSelectedActive: $switchThumbBorderWidthHover !default;
 // ----- COLORS -----
-//$switchTrackBgColorSelectedActive:        $switchTrackBgColorSelectedHover !default; // #0572ce
-//$switchTrackBorderColorSelectedActive:    $switchTrackBorderColorSelectedHover !default; // #0572ce
-//$switchThumbBgColorSelectedActive:        $switchThumbBgColorSelectedHover !default; // #0572ce
-//$switchThumbBorderColorSelectedActive:    $switchThumbBorderColorSelectedHover !default; // #9dd9ff
+//$switchTrackBgColorSelectedActive:        $switchTrackBgColorSelected !default;
+//$switchTrackBorderColorSelectedActive:    $switchTrackBorderColorSelected !default;
+//$switchThumbBgColorSelectedActive:        $switchThumbBgColorSelected !default;
+//$switchThumbBorderColorSelectedActive:    $switchThumbBorderColorSelected !default;
 
 // READONLY OFF
 //$switchThumbHeightReadonly: $switchThumbHeight !default;
 //$switchThumbWidthReadonly: $switchThumbHeight !default;
 // ----- COLORS -----
-//$switchTrackBgColorReadonly:             $neutralColor1 !default; // #ffffff
-//$switchTrackBorderColorReadonly:         $neutralColor17  !default;
-//$switchThumbBgColorReadonly:             $switchTrackBgColorReadonly !default; // #ffffff
-//$switchThumbBorderColorReadonly:         $switchTrackBorderColorReadonly !default; // #000000
+//$switchTrackBgColorReadonly:             transparent !default;
+//$switchTrackBorderColorReadonly:         $switchTrackBgColorReadonly !default;
+//$switchThumbBgColorReadonly:             $switchTrackBgColorReadonly !default;
+//$switchThumbBorderColorReadonly:         $switchTrackBgColorReadonly !default;
 
 // READONLY ON
 //$switchThumbHeightSelectedReadonly: $switchThumbHeight !default;
 //$switchThumbWidthSelectedReadonly: $switchThumbHeight !default;
 // ----- COLORS -----
-//$switchTrackBgColorSelectedReadonly:     $neutralColor1 !default; // #ffffff
-//$switchTrackBorderColorSelectedReadonly: $switchTrackBorderColorReadonly !default;
-//$switchThumbBgColorSelectedReadonly:     $switchTrackBgColorSelectedReadonly !default; // #ffffff
-//$switchThumbBorderColorSelectedReadonly: $switchTrackBorderColorSelectedReadonly !default; // #000000
+//$switchTrackBgColorSelectedReadonly:     transparent !default;
+//$switchTrackBorderColorSelectedReadonly: $switchTrackBgColorSelectedReadonly !default;
+//$switchThumbBgColorSelectedReadonly:     $switchTrackBgColorSelectedReadonly !default;
+//$switchThumbBorderColorSelectedReadonly: $switchTrackBgColorSelectedReadonly !default;
 
 // DISABLED OFF
-//$switchThumbHeightDisabled: $switchThumbHeight !default;
-//$switchThumbWidthDisabled: $switchThumbHeight !default;
+//$switchThumbHeightDisabled: $switchThumbHeightSelected !default;
+//$switchThumbWidthDisabled: $switchThumbWidthSelected !default;
 // ----- COLORS -----
-//$switchTrackBgColorDisabled:             $neutralColor11 !default;
+//$switchTrackBgColorDisabled:             $neutralColor6 !default;
 //$switchTrackBorderColorDisabled:         $switchTrackBgColorDisabled !default;
-//$switchThumbBgColorDisabled:             $neutralColor13 !default;
+//$switchThumbBgColorDisabled:             $iconColorDisabled !default;
 //$switchThumbBorderColorDisabled:         $switchThumbBgColorDisabled !default;
 
 // DISABLED ON
-//$switchThumbHeightSelectedDisabled: $switchThumbHeight !default;
-//$switchThumbWidthSelectedDisabled: $switchThumbHeight !default;
+//$switchThumbHeightSelectedDisabled: $switchThumbHeightSelected !default;
+//$switchThumbWidthSelectedDisabled: $switchThumbWidthSelected !default;
 // ----- COLORS -----
-//$switchTrackBgColorSelectedDisabled:     $switchTrackBgColorDisabled !default;
+//$switchTrackBgColorSelectedDisabled:     $switchThumbBgColorDisabled !default;
 //$switchTrackBorderColorSelectedDisabled: $switchTrackBgColorSelectedDisabled !default;
-//$switchThumbBgColorSelectedDisabled:     $switchThumbBgColorDisabled !default;
-//$switchThumbBorderColorSelectedDisabled: $switchThumbBgColorSelectedDisabled !default; // #bdbdbd
+//$switchThumbBgColorSelectedDisabled:     $switchTrackBgColorDisabled !default;
+//$switchThumbBorderColorSelectedDisabled: $switchThumbBgColorSelectedDisabled !default;
 
 
 // LISTBOX
@@ -1978,7 +1978,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$dateTimePickerWidth:        275px                          !default;
 //$dateTimePickerPadding:      15px                           !default;
 
-//$dateTimePickerSwitcherBgColor: $neutralColor6     !default;
+//$dateTimePickerSwitcherBgColor:           $neutralColor5 !default;
 //$dateTimePickerSwitcherPadding: 5px $dateTimePickerPadding !default;
 
 //$dateTimePickerDropDownThresholdWidth: #{lower-bound($screenMediumRange)} !default;
@@ -2007,10 +2007,10 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 //options
 // For option 'renderMode' in ojInputDate / ojInputDateTime / ojInputDate
-//$inputDateTimeRenderModeOptionDefault: native !default;
+//$inputDateTimeRenderModeOptionDefault:    jet !default;
 //$inputDateTimeDatePickerOptionDefault: (footerLayout: 'today') !default;
 
-//$inputDateTimeKeyboardEditOptionDefault: disabled !default;
+//$inputDateTimeKeyboardEditOptionDefault:  enabled !default;
 //$inputDateTimeTimePickerOptionDefault:   null     !default;
 
 
@@ -2055,17 +2055,17 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // PROGRESS
 //-----------------------------------------------------------------------------
 //$progressValueBgColor:                   $brandColor !default;
-//$progressBarHeight:                       8px !default;
-//$progressBarBgColor:                      $brandColorLight2 !default;
-//$progressBarBgOpacity:                   1 !default;
+//$progressBarHeight:                      4px !default;
+//$progressBarBgColor:                     $brandColor !default;
+//$progressBarBgOpacity:                   0.3 !default;
 //$progressBarBorderColor:                 $neutralColor7 !default;
 //$progressBarBorderRadius:                0 !default;
 //$progressBarBorderStyle:                 none !default;
 
-//$progressBarIndeterminateOverlayImage:   $imageDir + "animated-overlay.gif" !default;
-//$progressBarIndeterminateOverlayOpacity: 1 !default;
+//$progressBarIndeterminateOverlayImage:   null !default;
+//$progressBarIndeterminateOverlayOpacity: 0 !default;
 
-//$progressCircleIndeterminateOverlayImage: $imageDir + "spinner_full_default.gif" !default;
+//$progressCircleIndeterminateOverlayImage: $imageDir + "spinner_full.gif" !default;
 
 //$progressCircleSize:                     32px !default;
 //$progressCircleBgColor:                  $progressBarBgColor !default;
@@ -2074,63 +2074,63 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 
 // unvisited state
-//$trainBgColor:                            $neutralColor13 !default;
-//$trainBorderColor:                        $trainBgColor !default;
-//$trainLabelColor:                         $secondaryTextColor !default;
-//$trainButtonTextColor:                    $contrastTextColor !default;
+//$trainBgColor:                            $neutralColor1 !default;
+//$trainBorderColor:                        $iconColorDefault !default;
+//$trainLabelColor:                         $textColor !default;
+//$trainButtonTextColor:                    $textColor !default;
 
 // visited state
-//$trainBgColorVisited:                     $brandColor !default;
-//$trainBorderColorVisited:                 $trainBgColorVisited !default;
-//$trainLabelColorVisited:                  $secondaryTextColor !default;
-//$trainButtonTextColorVisited:             $contrastTextColor !default;
+//$trainBgColorVisited:                     $trainBgColor !default;
+//$trainBorderColorVisited:                 $trainBorderColor !default;
+//$trainLabelColorVisited:                  $trainLabelColor !default;
+//$trainButtonTextColorVisited:             $brandColor !default;
 
 // selected state
 //$trainBgColorSelected:                    $brandColor !default;
 //$trainBorderColorSelected:                $trainBgColorSelected !default;
 //$trainButtonTextColorSelected:            $contrastTextColor !default;
-//$trainLabelFontWeightSelected:            bold !default;
+//$trainLabelFontWeightSelected:            500 !default;
 
 // disabled state
-//$trainBgColorDisabled:                    $neutralColor9 !default;
-//$trainBorderColorDisabled:                $trainBgColorDisabled !default;
-//$trainLabelColorDisabled:                 $textColor !default;
+//$trainBgColorDisabled:                    $trainBgColor !default;
+//$trainBorderColorDisabled:                $neutralColor8 !default;
+//$trainLabelColorDisabled:                 $textColorDisabled !default;
 //$trainOpacityDisabled:                    $opacityDisabled !default;
-//$trainButtonTextColorDisabled:            $contrastTextColor !default;
+//$trainButtonTextColorDisabled:            $trainLabelColorDisabled !default;
 
 // hover state
 //$trainBgColorHover:                       $iconColorHover !default;
 //$trainBorderColorHover:                   $trainBgColorHover !default;
-//$trainButtonTextColorHover:               $contrastTextColor !default;
+//$trainButtonTextColorHover:              $contrastTextColor !default;
 
 // active state
 //$trainBgColorActive :                     $neutralColor7 !default;
-//$trainBorderColorActive:                  $brandColor !default;
+//$trainBorderColorActive:                  $trainBgColorActive !default;
 //$trainLabelTextDecorationActive:          none !default;
-//$trainLabelFontWeightActive:              bold !default;
-//$trainButtonTextColorActive:              $trainBgColorVisited !default;
+//$trainLabelFontWeightActive:              500 !default;
+//$trainButtonTextColorActive:              $trainButtonTextColorSelected !default;
 
 // button label
-//$trainButtonFontSize:                     12px !default;
+//$trainButtonFontSize:                     13px !default;
 // valid values are 'none' and 'numeric'
 //$trainButtonStyleType:                    numeric !default;
 
 // the default width of a stepr
 //$trainStepWidth:                          7rem !default;
 
-//$trainLabelPaddingTop:                    13px !default;
+//$trainLabelPaddingTop:                    14px !default;
 
 // $trainLabelTextWrap accepts css white-space
 // values such as normal or nowrap
 //$trainLabelTextWrap:                      normal !default;
 
 // the diameter of the "button" representing a stop
-//$trainButtonDiameter:                     24px !default;
-//$trainButtonBorderWidth:                  1px !default;
+//$trainButtonDiameter:                     28px !default;
+//$trainButtonBorderWidth:                  2px !default;
 
 // message icon diameter
 //$trainIconDiameter:                       $trainButtonDiameter !default;
-//$trainButtonMessagingIconColor:           $trainButtonTextColor !default;
+//$trainButtonMessagingIconColor:           $neutralColor1 !default;
 
 //$trainConfirmationBgColor:                $accentColorConfirmation4 !default;
 //$trainErrorBgColor:                       $accentColorDanger4 !default;
@@ -2141,14 +2141,14 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // connector is a single shape behind all of the step buttons while the 'individual'
 // connector renders seperate shapes between each step.
 //$trainConnectorType:                      individual !default;
-//$trainConnectorBgColor:                   $neutralColor9 !default;
-//$trainConnectorHeight:                    1px !default;
+//$trainConnectorBgColor:                   $neutralColor7 !default;
+//$trainConnectorHeight:                    2px !default;
 //$trainContinuousConnectorBgColorSelected: transparent !default;
-//$trainIndividualConnectorBgColorSelected: null !default;
+//$trainIndividualConnectorBgColorSelected: $neutralColor10 !default;
 
 // padding for individual connector
 //$trainIndividualConnectorPadding:         10px !default;
-//$trainIndividualConnectorPaddingSelected: $trainIndividualConnectorPadding !default;
+//$trainIndividualConnectorPaddingSelected: 0 !default;
 
 // the diameter of the connector circle around the button in the continuous
 // connector design
@@ -2182,35 +2182,35 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 // Default
 //$collectionBorderColor:                       $neutralColor8 !default;
-//$collectionBgColor:                           $neutralColor1 !default;
+//$collectionBgColor:                           $neutralColor2 !default;
 // Headers
-//$collectionCellPadding:                       oj-px-to-rem(8px, $baseFontSize: 16px) !default;
+//$collectionCellPadding:                 0.5em !default;
 //$collectionHeaderFontWeight:                  $headerFontWeight !default;
 //$collectionHeaderTextColor:                   $headerTextColor !default;
-//$collectionHeaderFontSize:                    $smallestFontSize !default;
+//$collectionHeaderFontSize:                    null !default;
 // Headers content alignment
 //$collectionColumnHeaderJustifyContent:        center !default;
 //$collectionColumnHeaderAlignItems:            center !default;
 //$collectionRowHeaderJustifyContent:           flex-start !default;
 //$collectionRowHeaderAlignItems:               center !default;
 // Headers - Default
-//$collectionHeaderBgColor:                     $neutralColor1 !default;
+//$collectionHeaderBgColor:                     $neutralColor4 !default;
 //$collectionHeaderBorderColor:                 $collectionBorderColor !default;
 // Headers - Hover
 //$collectionHeaderBgColorHover:                $neutralColor8 !default;
 // Headers - Focus
-//$collectionHeaderBgColorFocus:                $brandColorLight2  !default;
+//$collectionHeaderBgColorFocus:                $brandColorLight2 !default;
 // Headers - Selected
-//$collectionHeaderBgColorSelected:             $neutralColor9  !default;
+//$collectionHeaderBgColorSelected:             $brandColorLight3 !default;
 // Headers - Selected Inactive (selected but focus outside the component)
 //$collectionHeaderBgColorSelectedInactive:     $neutralColor5 !default;
 // Headers - Dragged
 //$collectionHeaderBgColorDrag:                 $brandColorLight4 !default;
-//$collectionHeaderDragImageBorderColor:        $neutralColor10 !default;
+//$collectionHeaderDragImageBorderColor:        $brandColor !default;
 
 // Cells
-//$collectionCellTextColor:                     $textColor  !default;
-//$collectionCellFontSize:                      oj-px-to-rem(13px, $baseFontSize: 16px) !default;
+//$collectionCellTextColor:                     $textColor !default;
+//$collectionCellFontSize:                      null !default;
 // Cells content alignment
 //$collectionCellJustifyContent:                flex-end !default;
 //$collectionCellAlignItems:                    center !default;
@@ -2219,17 +2219,17 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$collectionCellBgColor:                       $neutralColor1 !default;
 //$collectionCellBandedBgColor:                 $neutralColor3 !default;
 // Cells - Hover
-//$collectionCellBgColorHover:                  $neutralColor5  !default;
+//$collectionCellBgColorHover:                  $neutralColor5 !default;
 //$collectionCellBorderColorHover:              $collectionCellBorderColor !default;
 // Cells - Focus
 //$collectionCellBgColorFocus:                  $brandColorLight4 !default;
 //$collectionCellBorderColorFocus:              $collectionCellBorderColor !default;
 // Cells - Selected
-//$collectionCellBgColorSelected:               $neutralColor8 !default;
-//$collectionCellBorderColorSelected:           $neutralColor11  !default;
+//$collectionCellBgColorSelected:               $brandColorLight5 !default;
+//$collectionCellBorderColorSelected:           transparent !default;
 // Cells - Selected Inactive (selected but focus outside the component)
-//$collectionCellBgColorSelectedInactive:       $collectionCellBgColorSelected !default;
-//$collectionCellBorderColorSelectedInactive:   $collectionCellBorderColorSelected !default;
+//$collectionCellBgColorSelectedInactive:       $brandColorLight5 !default;
+//$collectionCellBorderColorSelectedInactive:   $collectionCellBorderColor !default;
 // Cells - Dragged
 //$collectionCellBgColorDrag:                   $brandColorLight5 !default;
 //$collectionCellDragImageBorderColor:          transparent !default;
@@ -2239,9 +2239,9 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$collectionEditableCellBgColorReadOnly:       $neutralColor5 !default;
 
 // Rows - Height is now dependent on the default form control height
-//$collectionRowHeight:                         max($formControlInputHeight, oj-px-to-rem(47px, $baseFontSize: 16px)) !default;
-//$collectionHeaderHeight:                      oj-px-to-rem(55px, $baseFontSize: 16px) !default;
-//$collectionColumnWidth:                       oj-px-to-rem(68px, $baseFontSize: 16px) !default;
+//$collectionRowHeight:                         max($formControlInputHeight, $formControlTriggerHeight) !default;
+//$collectionHeaderHeight:                      $collectionRowHeight !default;
+//$collectionColumnWidth:                       4.166rem !default;
 
 // Status Text
 //$collectionStatusBgColor:                     $collectionCellBgColor !default;
@@ -2262,8 +2262,8 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 // node background color
 //$treeViewItemBgColorHover:            $collectionCellBgColorHover !default;
-//$treeViewItemBgColorSelected:         $collectionCellBgColorSelected !default;
-//$treeViewItemBgColorSelectedInactive: $collectionCellBgColorSelected !default; // BgColorSelectedInactive is too light
+//$treeViewItemBgColorSelected:         $brandColorLight4 !default;
+//$treeViewItemBgColorSelectedInactive: $brandColorLight4 !default;
 
 // dnd
 //$treeViewDropLineColor:               $brandColor !default;
@@ -2300,25 +2300,25 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // ROWEXPANDER
 //-----------------------------------------------------------------------------
 //$rowExpanderIndentWidth:  16px !default;
-//$rowExpanderSpacerWidth:  1.25rem !default;
+//$rowExpanderSpacerWidth:  1.5rem !default;
 
 // PAGING CONTROL
 //-----------------------------------------------------------------------------
 // padding between various elements of the paging control
 //$pagingControlPadding:    5px !default;
-//$pagingDotSize:           7px !default;
-//$pagingDotPadding:        8px !default;
+//$pagingDotSize:           10px !default;
+//$pagingDotPadding:        10px !default;
 
 // LISTVIEW
 //-----------------------------------------------------------------------------
 
 //$listViewAnimationDuration:    $animationDurationMedium !default;
-//$listViewHeaderBorderWidth:    0 0 1px !default;
-//$listViewHeaderFontSize:     $header5FontSize !default;
+//$listViewHeaderBorderWidth: 1px !default;
+//$listViewHeaderFontSize:       $header4FontSize !default;
 //$listViewHeaderOpacity:        1 !default;
 //$listViewHeaderFontWeight:     $headerFontWeight !default;
 // the right and left margins will be flipped in rtl languanges
-//$listViewCardMargin:         8px 8px 0 0 !default;
+//$listViewCardMargin:           $spacingMedium $spacingMedium 0 0 !default;
 //$listViewCardWidth:            240px !default;
 //$listViewCardHeight:           auto !default;
 //$listViewDrillIconColor:       $iconColorDefault !default;
@@ -2328,7 +2328,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$listViewUpdateAnimation:      (effect: "fadeIn") !default;
 //$listViewExpandAnimation:      (effect: "expand") !default;
 //$listViewCollapseAnimation:    (effect: "collapse") !default;
-//$listViewPointerUpAnimation: (effect: "ripple") !default;
+//$listViewPointerUpAnimation:   (effect: "none") !default;
 
 // PULL TO REFRESH
 //-----------------------------------------------------------------------------
@@ -2369,15 +2369,15 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 // height of each item
 //$indexerAbbrItemHeight:      14px !default;
 // text color of the prefix in the indexer
-//$indexerTextColor:           $secondaryTextColor !default;
+//$indexerTextColor:              $linkTextColor !default;
 // text color of the prefix in the indexer in disabled state
-//$indexerTextColorDisabled:   null !default;
+//$indexerTextColorDisabled:      $textColorDisabled !default;
 // text decoration of the prefix in the indexer
 //$indexerTextDecoration:      none !default;
 // text decoration of the prefix in the indexer when hover
-//$indexerTextDecorationHover: none !default;
+//$indexerTextDecorationHover:    underline !default;
 // font weight of the prefix in the indexer
-//$indexerFontWeight:          bold !default;
+//$indexerFontWeight:             normal !default;
 
 // MASONRY LAYOUT
 //-----------------------------------------------------------------------------
@@ -2404,9 +2404,9 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-----------------------------------------------------------------------------
 
 // opacity of arrows
-//$filmStripArrowOpacity: 1 !default;
+//$filmStripArrowOpacity: 0.8 !default;
 // border radius of arrows
-//$filmStripArrowBorderRadius: $buttonBorderRadius !default;
+//$filmStripArrowBorderRadius: 50% !default;
 
 
 // CONVEYOR BELT
@@ -2422,55 +2422,55 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //---Common variables----
 
 //Default
-//$navigationListItemLabelColorDefault:                      $secondaryTextColor !default;
-//$navigationListItemIconColorDefault:                       $navigationListItemLabelColorDefault !default;
-//$navigationListCollapsibleIconColorDefault:                $navigationListItemLabelColorDefault !default;
+//$navigationListItemLabelColorDefault:                         $linkTextColor !default;
+//$navigationListItemIconColorDefault:                          $iconColorDefault !default;
+//$navigationListCollapsibleIconColorDefault:                   $iconColorDefault !default;
 
 //Hover
-//$navigationListItemBorderColorHover:                       $iconColorHover !default;
-//$navigationListItemBgColorHover:                           $neutralColor6 !default;
-//$navigationListItemIconColorHover:                         $iconColorHover !default;
+//$navigationListItemBorderColorHover:                          $iconColorHover !default;
+//$navigationListItemBgColorHover:                              $neutralColor6 !default;
+//$navigationListItemIconColorHover:                            $iconColorHover !default;
 
 //Selected
 //$navigationListItemLabelColorSelected:                        $brandColorDark1 !default;
-//$navigationListItemBorderColorSelected:                    $brandColor !default;
-//$navigationListItemIconColorSelected:                      $iconColorSelected !default;
-//$navigationListItemBgColorSelected:                        $neutralColor5 !default; // only applies to vertical navlist
+//$navigationListItemBorderColorSelected:                       $brandColor !default;
+//$navigationListItemIconColorSelected:                         $iconColorSelected !default;
+//$navigationListItemBgColorSelected:                           $neutralColor5 !default; // only applies to vertical navlist
 
 //Focus
-//$navigationListItemOutlineColorFocus:                      $neutralColor14 !default;
+//$navigationListItemOutlineColorFocus:                         $neutralColor14 !default;
 
 //Disabled
-//$navigationListItemLabelColorDisabled:                     $navigationListItemLabelColorDefault !default;
-//$navigationListIconColorDisabled:                          $navigationListItemLabelColorDefault !default;
+//$navigationListItemLabelColorDisabled:                        $linkTextColorDisabled !default;
+//$navigationListIconColorDisabled:                             $iconColorDisabled !default;
 
 // category divider - used between categories
-//$navigationListCategoryDividerColor:                       $neutralColor8 !default;
+//$navigationListCategoryDividerColor:                          $neutralColor8 !default;
 
 //sizing
-//$navigationListItemMinHeight:                              oj-px-to-rem(43px, $baseFontSize: 16px) !default; // only applies to vertical navlist.
+//$navigationListItemMinHeight:                                 oj-px-to-rem(44px, $baseFontSize: 14px) !default;   //applies to vertical only
 // Not applicable to icon-only
-//$navigationListItemStartEndPadding:                           oj-px-to-rem(10px, $baseFontSize: 16px) !default;
-//$navigationListIconToTextPadding:                          oj-px-to-rem(10px, $baseFontSize: 16px) !default;
-//$navigationListItemAccentBorderWidth:                         3px !default;
+//$navigationListItemStartEndPadding:                           oj-px-to-rem(15px, $baseFontSize: 14px) !default;
+//$navigationListIconToTextPadding:                             oj-px-to-rem(10px, $baseFontSize: 14px) !default;
+//$navigationListItemAccentBorderWidth:                      3px !default;
 //$navigationListItemLabelTextWrap:                          nowrap !default;
 //$navigationListItemBorderWidth:                            0 0 0 $navigationListItemAccentBorderWidth !default;// the right and left borders will be flipped in rtl languanges
 
 //----------Common icon only variables
 
 //Hover
-//$navigationListItemIconOnlyBgColorHover:                   null !default;
+//$navigationListItemIconOnlyBgColorHover:                      $neutralColor6 !default;
 
 //Selected
-//$navigationListItemIconOnlyBgColorSelected:                null !default;
-//$navigationListIconOnlyIconColorSelected:                  $brandColor !default;
+//$navigationListItemIconOnlyBgColorSelected:                   $brandColor !default;
+//$navigationListIconOnlyIconColorSelected:                     $neutralColor1 !default;
 
 //----------NavigationList(vertical) icon only variables
 
 // values could be "circle"(alta default) or "none"(for android/windows/ios)
-//$navigationListIconOnlyStyle:                              none !default;
+//$navigationListIconOnlyStyle:                                 circle !default;
 //Padding between items
-//$navigationListIconOnlyItemPadding:                        null !default;
+//$navigationListIconOnlyItemPadding:                           4px !default;
 //Only applicable when icon only style is "none".
 //$navigationListIconOnlyIconStartEndPadding:                16px !default;
 
@@ -2481,66 +2481,66 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //-------Navlist Contrast variables--------------
 
 //Default
-//$navigationListItemContrastLabelColorDefault:     $neutralColor10 !default;
+//$navigationListItemContrastLabelColorDefault:              $neutralColor11 !default;
 
 //Hover
-//$navigationListItemContrastLabelColorHover:       $neutralColor3 !default;
-//$navigationListItemContrastBgColorHover:          $neutralColor16 !default;
+//$navigationListItemContrastLabelColorHover:                $neutralColor3 !default;
+//$navigationListItemContrastBgColorHover:                   $neutralColor16 !default;
 
 //Selected
-//$navigationListItemContrastLabelColorSelected:    $neutralColor3 !default;
-//$navigationListItemContrastBgColorSelected:       $neutralColor16 !default;
+//$navigationListItemContrastLabelColorSelected:             $neutralColor3 !default;
+//$navigationListItemContrastBgColorSelected:                $neutralColor16 !default;
 
 //Disabled
-//$navigationListItemContrastLabelColorDisabled:    $neutralColor13 !default;
+//$navigationListItemContrastLabelColorDisabled:             $neutralColor13 !default;
 
 // NOTE: for the sliding toolbar and hierarchical menu area
 // navigationList uses various $toolbar*,$buttonHalfChrome*,$tree*,$menu* and $header3FontSize variables
 
 //------Options----------------
-//$navigationListHierarchyMenuThresholdOptionDefault: -1 !default;
+//$navigationListHierarchyMenuThresholdOptionDefault:           3 !default;
 
 
 //------Horizontal list variables----
 
 // Default
 //$navigationListHorizontalItemBorderColor:                  transparent !default;
-//$navigationListHorizontalItemLabelColorDefault:            $navigationListItemLabelColorDefault !default;
-//$navigationListHorizontalItemIconColorDefault:             $navigationListItemIconColorDefault !default;
+//$navigationListHorizontalItemLabelColorDefault:               $textColor4 !default;
+//$navigationListHorizontalItemIconColorDefault:                $neutralColor15 !default;
 
 // divider - used between text items when horizontal
-//$navigationListHorizontalItemDividerColor:                 $neutralColor7 !default;
+//$navigationListHorizontalItemDividerColor:                    $neutralColor7 !default;
 
 // Selected
 //$navigationListHorizontalItemBgColorSelected:              null !default;
-//$navigationListHorizontalItemBorderColorSelected:          $brandColor !default;
+//$navigationListHorizontalItemBorderColorSelected:             $brandColor !default;
 //$navigationListHorizontalItemLabelColorSelected:              $brandColorDark1 !default;
-//$navigationListHorizontalItemIconColorSelected:            $navigationListItemIconColorSelected !default;
+//$navigationListHorizontalItemIconColorSelected:               $iconColorSelected !default;
 
 //Sizing
-//$navigationListHorizontalFontSize:                            oj-px-to-rem(12px, $baseFontSize: 16px)  !default;
-//$navigationListHorizontalMinHeight:                           oj-px-to-rem(56px, $baseFontSize: 16px) !default;
+//$navigationListHorizontalFontSize:                            1rem !default;
+//$navigationListHorizontalMinHeight:                           oj-px-to-rem(38px, $baseFontSize: 14px) !default;
 
 // the right and left borders will be flipped in rtl languanges
-//$navigationListHorizontalItemBorderWidth:                     0 !default;
+//$navigationListHorizontalItemBorderWidth:                  0 0 $navigationListItemAccentBorderWidth 0 !default;
 // the right and left will be flipped in rtl languanges
-//$navigationListHorizontalItemPadding:                         2px $navigationListItemStartEndPadding 6px !default;
-//$navigationListHorizontalIconMargin:                       4px !default;
-//$navigationListHorizontalIconToTextPadding:                2px !default;
+//$navigationListHorizontalItemPadding:                         0.5rem $navigationListItemStartEndPadding 4px !default;
+//$navigationListHorizontalIconMargin:                          0 !default;
+//$navigationListHorizontalIconToTextPadding:                   $navigationListIconToTextPadding !default;
 
 //Stacked horizontal navigationlist
-//$navigationListHorizontalStackedIconMinHeight:                oj-px-to-rem(56px, $baseFontSize: 16px)  !default;
-//$navigationListHorizontalStackedItemPadding:                  1px $navigationListItemStartEndPadding 0 !default;
+//$navigationListHorizontalStackedIconMinHeight:                oj-px-to-rem(60px, $baseFontSize: 14px) !default;
+//$navigationListHorizontalStackedItemPadding:               $navigationListHorizontalItemPadding !default;
 
 //----------Horizontal navigationlist icon only variables
 // values could be "circle"(alta default) or "none"(for android/windows/ios)
-//$navigationListHorizontalIconOnlyStyle:                    none !default;
+//$navigationListHorizontalIconOnlyStyle:                       circle !default;
 //space between items
 //$navigationListHorizontalIconOnlyItemMargin:               4px !default;
 
 //----------------Horizontal navigationlist contrast variables
-//$navigationListHorizontalItemContrastBgColorSelected:         $neutralColor1 !default;
-//$navigationListHorizontalItemContrastLabelColorSelected:      $textColor3 !default;
+//$navigationListHorizontalItemContrastBgColorSelected:      null !default;
+//$navigationListHorizontalItemContrastLabelColorSelected:      $neutralColor3 !default;
 
 //---------------Animations-------------------
 //$navigationListHorizontalAddAnimation:                     ((effect: "expand", direction:"width"), "fadeIn") !default;
@@ -2552,7 +2552,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$navigationListCollapseAnimation:                          (effect: "collapse") !default;
 //$navigationListSliderExpandAnimation:                      (effect: "slideIn", direction:"start", duration:"400ms") !default;
 //$navigationListSliderCollapseAnimation:                    (effect: "slideIn", direction:"end", duration:"400ms") !default;
-//$navigationListPointerUpAnimation:                            (effect: "ripple") !default;
+//$navigationListPointerUpAnimation:                         (effect: "none") !default;
 
 // END of NavigationList variables
 
@@ -2560,64 +2560,64 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //----------------------------------------------------------------------
 //Default
 //$tabBarItemBorderColor:                             null !default;
-//$tabBarItemLabelColorDefault:                         $formControlLabelColor !default;
-//$tabBarItemIconColorDefault:                          $formControlLabelColor !default;
+//$tabBarItemLabelColorDefault:                         $linkTextColor !default;
+//$tabBarItemIconColorDefault:                          $iconColorDefault !default;
 
 //Hover
-//$tabBarItemBorderColorHover:                        $iconColorHover !default;
-//$tabBarItemBgColorHover:                            $neutralColor6 !default;
-//$tabBarItemIconColorHover:                          $iconColorHover !default;
-//$tabBarItemIconOnlyBgColorHover:                    null !default;
+//$tabBarItemBorderColorHover:                          $iconColorHover !default;
+//$tabBarItemBgColorHover:                              $neutralColor6 !default;
+//$tabBarItemIconColorHover:                            $iconColorHover !default;
+//$tabBarItemIconOnlyBgColorHover:                      $neutralColor6 !default;
 
 //selected
-//$tabBarItemLabelColorSelected:                        $brandColorDark1 !default;
-//$tabBarItemIconColorSelected:                       $brandColor !default;
-//$tabBarItemBorderColorSelected:                     $brandColor !default;
-//$tabBarItemBgColorSelected:                           transparent !default;
-//$tabBarItemIconOnlyBgColorSelected:                 null !default;
-//$tabBarIconOnlyIconColorSelected:                   $brandColor !default;
+//$tabBarItemLabelColorSelected:                        $tabBarItemLabelColorDefault !default;
+//$tabBarItemIconColorSelected:                         $brandColor !default;
+//$tabBarItemBorderColorSelected:                       $brandColor !default;
+//$tabBarItemBgColorSelected:                         null !default;
+//$tabBarItemIconOnlyBgColorSelected:                   $brandColor !default;
+//$tabBarIconOnlyIconColorSelected:                     $neutralColor1 !default;
 
 //active
-//$tabBarItemBgColorActive:                             $neutralColor4 !default;
-//$tabBarItemBorderColorActive:                         $iconColorHover !default;
+//$tabBarItemBgColorActive:                           null !default;
+//$tabBarItemBorderColorActive:                       null !default;
 
 //Focus
-//$tabBarItemOutlineColorFocus:                       $neutralColor14 !default;
+//$tabBarItemOutlineColorFocus:                         $neutralColor14 !default;
 
 //Disabled
-//$tabBarItemLabelColorDisabled:                      $tabBarItemLabelColorDefault !default;
-//$tabBarIconColorDisabled:                           $tabBarItemLabelColorDefault !default;
+//$tabBarItemLabelColorDisabled:                        $textColorDisabled !default;
+//$tabBarIconColorDisabled:                             $textColorDisabled !default;
 
 // category divider - used between categories
-//$tabBarCategoryDividerColor:                        $neutralColor8 !default;
+//$tabBarCategoryDividerColor:                          $neutralColor8 !default;
 
 //sizing
 
 //minimum label width ensured during progressive truncation
 //$tabBarTruncatedLabelMinWidth:                      3rem !default;
 // Not applicable to icon-only
-//$tabBarItemStartEndPadding:                           oj-px-to-rem(10px, $baseFontSize: 16px) !default;
-//$tabBarIconToTextPadding:                           oj-px-to-rem(10px, $baseFontSize: 16px) !default;
+//$tabBarItemStartEndPadding:                           oj-px-to-rem(15px, $baseFontSize: 14px) !default;
+//$tabBarIconToTextPadding:                             oj-px-to-rem(10px, $baseFontSize: 14px) !default;
 //$tabBarItemLabelTextWrap:                           nowrap !default;
 // values could be "circle"(alta default) or "none"(for android/windows/ios)
-//$tabBarIconOnlyStyle:                               none !default;
+//$tabBarIconOnlyStyle:                                 circle !default;
 //$tabBarItemFontWeightSelected:                      normal !default;
 //$tabBarItemBorderRadius:                            null !default;
 
 //---------------Vertical tab bar variables-----------------
 //Padding between items
-//$tabBarVerticalIconOnlyItemPadding:                         null !default;
+//$tabBarVerticalIconOnlyItemPadding:                   4px !default;
 //Only applicable when icon only style is "none".
 //$tabBarVerticalIconOnlyIconStartEndPadding:                 16px !default;
 //This value will be ignored when $tabBarIconOnlyStyle is set to 'circle'.
 //$tabBarVerticalIconOnlyItemBorderWidth:                     0 0 0 3px !default;// the right and left borders will be flipped in rtl languanges
-//$tabBarVerticalItemBorderWidth:                       0 0 1px 2px !default;
-//$tabBarVerticalItemMinHeight:                         oj-px-to-rem(47px, $baseFontSize: 16px)  !default;
-//$tabBarVerticalItemFontSize:                          oj-px-to-rem(14px, $baseFontSize: 16px)  !default;
+//$tabBarVerticalItemBorderWidth:                             0 0 0 3px !default;// the right and left borders will be flipped in rtl languanges
+//$tabBarVerticalItemMinHeight:                         oj-px-to-rem(44px, $baseFontSize: 14px) !default;   //applies to vertical only
+//$tabBarVerticalItemFontSize:                                null !default;
 //Align label of vertical tab bar, support either null or center
-//$tabBarVerticalItemLabelTextAlign:                    center !default;
+//$tabBarVerticalItemLabelTextAlign:                          null !default;
 //Separator color used in vertical tabbar
-//$tabBarVerticalItemSeparatorColor:                    $neutralColor7 !default;
+//$tabBarVerticalItemSeparatorColor:                          null !default;
 
 //------Horizontal Tab Bar variables----
 
@@ -2625,52 +2625,52 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$tabBarHorizontalItemBorderColor:                   transparent !default;
 
 // divider - used between text items when horizontal
-//$tabBarHorizontalItemDividerColor:                  $neutralColor7 !default;
+//$tabBarHorizontalItemDividerColor:                    $neutralColor7 !default;
 
 //selected
 //$tabBarHorizontalItemLabelColorSelected:            $tabBarItemLabelColorSelected !default;
-//$tabBarHorizontalItemIconColorSelected:             $tabBarItemIconColorSelected !default;
-//$tabBarHorizontalItemBgColorSelected:               $tabBarItemBgColorSelected !default;
-//$tabBarHorizontalItemBorderColorSelected:           $brandColor !default;
+//$tabBarHorizontalItemIconColorSelected:               $tabBarItemIconColorSelected !default;
+//$tabBarHorizontalItemBgColorSelected:                 transparent !default;
+//$tabBarHorizontalItemBorderColorSelected:             $brandColor !default;
 
 // Hover
-//$tabBarHorizontalItemBorderColorHover:              $tabBarItemBorderColorHover !default;
+//$tabBarHorizontalItemBorderColorHover:                $tabBarItemBorderColorHover !default;
 //Sizing
-//$tabBarHorizontalItemBorderWidth:                     0 0 2px 0 !default;
+//$tabBarHorizontalItemBorderWidth:                   0 0 3px 0 !default;//horizontal
 // the right and left will be flipped in rtl languanges
-//$tabBarHorizontalItemPadding:                         2px $navigationListItemStartEndPadding 6px !default;
-//$tabBarHorizontalIconMargin:                        4px !default;
-//$tabBarHorizontalIconToTextPadding:                 2px !default;
+//$tabBarHorizontalItemPadding:                         0.5rem $tabBarItemStartEndPadding 4px !default;
+//$tabBarHorizontalIconMargin:                          0 !default;
+//$tabBarHorizontalIconToTextPadding:                   $tabBarIconToTextPadding !default;
 
 // values could be "circle"(alta default) or "none"(for android/windows/ios)
-//$tabBarHorizontalIconOnlyStyle:                     none !default;
+//$tabBarHorizontalIconOnlyStyle:                       circle !default;
 //space between items
 //$tabBarHorizontalIconOnlyItemMargin:                4px !default;
 
-//$tabBarHorizontalIconOnlyItemBorderWidth:             $tabBarHorizontalItemBorderWidth !default;
-//$tabBarHorizontalItemFontSize:                        oj-px-to-rem(14px, $baseFontSize: 16px)  !default;
-//$tabBarHorizontalItemMinHeight:                       oj-px-to-rem(48px, $baseFontSize: 16px)  !default;
-//$tabBarHorizontalItemStackedIconMinHeight:            oj-px-to-rem(48px, $baseFontSize: 16px)  !default;
-//$tabBarHorizontalStackedItemPadding:                  1px $tabBarItemStartEndPadding 0 !default;
+//$tabBarHorizontalIconOnlyItemBorderWidth:           $tabBarHorizontalItemBorderWidth !default;
+//$tabBarHorizontalItemFontSize:                      null !default;
+//$tabBarHorizontalItemMinHeight:                       oj-px-to-rem(38px, $baseFontSize: 14px) !default;
+//$tabBarHorizontalItemStackedIconMinHeight:          oj-px-to-rem(54px, $baseFontSize: 16px) !default;
+//$tabBarHorizontalStackedItemPadding:                $tabBarHorizontalItemPadding !default;
 //Valid values are either null or even which ensures equal size for all tabs
 //$tabBarHorizontalItemWidthDistribution:             null !default;
 //-------Tab Bar Contrast variables--------------
 //Default
-//$tabBarItemContrastLabelColorDefault:             $neutralColor10 !default;
+//$tabBarItemContrastLabelColorDefault:                 $neutralColor10 !default;
 
 //Hover
-//$tabBarItemContrastLabelColorHover:               $neutralColor3 !default;
-//$tabBarItemContrastBgColorHover:                  $neutralColor16 !default;
+//$tabBarItemContrastLabelColorHover:                   $brandColorLight1 !default;
+//$tabBarItemContrastBgColorHover:                      $neutralColor16 !default;
 
 //Selected
-//$tabBarItemContrastLabelColorSelected:            $neutralColor3 !default;
+//$tabBarItemContrastLabelColorSelected:                $brandColorLight1 !default;
 //$tabBarItemContrastBgColorSelected:                 null !default;
 //Horizontal Navigation Tabs  contrast variables
 //$tabBarHorizontalItemContrastBgColorSelected:       null !default;
-//$tabBarHorizontalItemContrastLabelColorSelected:  $neutralColor3 !default;
+//$tabBarHorizontalItemContrastLabelColorSelected:      $brandColorLight1 !default;
 
 //Disabled
-//$tabBarItemContrastLabelColorDisabled:            $neutralColor13 !default;
+//$tabBarItemContrastLabelColorDisabled:                $neutralColor13 !default;
 
 //----------Animations------------
 //$tabBarHorizontalAddAnimation:                      ((effect: "expand", direction:"width"), "fadeIn") !default;
@@ -2678,7 +2678,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$tabBarAddAnimation:                                ((effect: "expand"), "fadeIn") !default;
 //$tabBarRemoveAnimation:                             ((effect: "collapse"), "fadeOut") !default;
 //$tabBarUpdateAnimation:                             (effect: "fadeIn") !default;
-//$tabBarPointerUpAnimation:                            (effect: "ripple") !default;
+//$tabBarPointerUpAnimation:                          (effect: "none") !default;
 
 // END of TabBar variables
 
@@ -2696,7 +2696,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 
 
 //active
-//$filePickerBgColorActive:           $brandColorLight5 !default;
+//$filePickerBgColorActive:         $brandColorLight2 !default;
 //$filePickerBorderWidthActive:     1px !default;
 
 
@@ -2746,7 +2746,7 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 //$dvtChartStockFallingBgColor:     $dvtThreshold1Color !default;
 //$dvtChartStockRangeBgColor:       $neutralColor10 !default;
 //$dvtChartStockRisingBgColor:      $neutralColor13 !default;
-//$dvtChartSubtitleTextColor: $secondaryTextColor !default;
+//$dvtChartSubtitleTextColor:       $headerTextColor !default;
 //$dvtChartTitleTextColor:          $headerTextColor !default;
 
 // diagram
@@ -3074,5 +3074,4 @@ $commonImageDir:  "../../../alta/5.1.0/common/images/" !default;
 @include oj-theming-vars-removed();
 
 //$textColorBase: #000 !default;
-//$tabBarItemAccentBorderWidth:                         3px !default;
-//$listViewHeaderBgColor:             $neutralColor6 !default;
+//$trainBgColorActive:                      $trainBgColorSelected !default;

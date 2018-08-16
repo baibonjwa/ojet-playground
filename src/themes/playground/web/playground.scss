@@ -7,7 +7,8 @@
 // 2. platform theme aggregating file
 
 //import custom variable overrides
-@import "themeName.windows.settings";
+@import "playground.web.settings";
 
-// import alta-windows aggregating file
-@import "../../../../node_modules/@oracle/oraclejet/dist/scss/alta-windows/oj-alta";
+// import alta aggregating file
+@import "../../../../node_modules/@oracle/oraclejet/dist/scss/alta/oj-alta";
+@import "collections"

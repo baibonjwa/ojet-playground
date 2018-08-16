@@ -18,19 +18,19 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
       var mdQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.MD_UP);
       self.mdScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
 
-       // Router setup
-       self.router = oj.Router.rootInstance;
-       self.router.configure({
-         'collections': {label: 'Collections', isDefault: true},
-         'controls': {label: 'Controls'},
-         'forms': {label: 'Forms'},
-         'framework': {label: 'Framework'},
-         'layout': {label: 'Layout'},
-         'patterns': {label: 'Patterns'},
-         'visualizations': {label: 'Visualizations'}
-       });
+      // Router setup
+      self.router = oj.Router.rootInstance;
+      self.router.configure({
+        'collections': {label: 'Collections', isDefault: true},
+        'controls': {label: 'Controls'},
+        'forms': {label: 'Forms'},
+        'framework': {label: 'Framework'},
+        'layout': {label: 'Layout'},
+        'patterns': {label: 'Patterns'},
+        'visualizations': {label: 'Visualizations'}
+      });
+      // Default is urlPathAdapter
       // oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
-      oj.Router.defaults['urlAdapter'] = new oj.Router.urlPathAdapter();
 
       self.moduleConfig = ko.observable({'view':[], 'viewModel':null});
 
