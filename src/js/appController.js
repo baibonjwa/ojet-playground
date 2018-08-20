@@ -29,8 +29,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
         'patterns': {label: 'Patterns'},
         'visualizations': {label: 'Visualizations'}
       });
+
       // Default is urlPathAdapter
-      // oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+      oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
       self.moduleConfig = ko.observable({'view':[], 'viewModel':null});
 

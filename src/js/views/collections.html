@@ -6,7 +6,8 @@
   <div>
     <div class="oj-flex collections-container">
       <div id="tabbarcontainer" data-bind="style: {'maxWidth':(edge() === 'end' || edge() === 'start') ? '250px':''}">
-        <oj-tab-bar drill-mode="none" display="[[display]]" edge="[[edge]]" selection="{{selectedItem}}">
+        <!-- <oj-tab-bar drill-mode="none" display="[[display]]" edge="[[edge]]" selection="{{selectedItem}}"> -->
+        <oj-tab-bar drill-mode="none" display="[[display]]" edge="[[edge]]" selection="{{collectionsRouter.stateId}}">
           <ul>
             <li id="data-grid">
               <a href="#">
@@ -24,7 +25,8 @@
                 Indexer
               </a>
             </li>
-            <li id="list-view" class="oj-disabled">
+            <!-- <li id="list-view" class="oj-disabled"> -->
+            <li id="list-view">
               <a href="#">
                 <span class="oj-tabbar-item-icon
                           demo-catalog-icon-24 demo-icon-font-24">
@@ -55,7 +57,7 @@
                 Row Expander
               </a>
             </li>
-            <li id="swipe-to-review">
+            <li id="swipe-to-reveal">
               <a href="#">
                 <span class="oj-tabbar-item-icon demo-chat-icon-24 demo-icon-font-24">
                 </span>
@@ -79,8 +81,8 @@
           </ul>
         </oj-tab-bar>
       </div>
-      <div class="collections-content">
-          <span id="results" data-bind='text: selectedItem'></span>
+      <div class="collections-content" data-bind="ojModule: collectionsRouter.moduleConfig">
+        <!-- <span id="results" data-bind='text: collectionsRouter.stateId()'></span> -->
       </div>
     </div>
   </div>

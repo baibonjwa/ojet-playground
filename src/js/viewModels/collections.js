@@ -7,10 +7,29 @@
  * Your dashboard ViewModel code goes here
  */
 define(['ojs/ojcore', 'knockout', 'jquery'],
- function(oj, ko, $) {
-  
+ function(oj, ko, $, moduleUtils) {
+    oj.ModuleBinding.defaults.modelPath = 'viewModels/collections/';
+    oj.ModuleBinding.defaults.viewPath = 'text!views/collections/';
+
     function CollectionsViewModel() {
       var self = this;
+      self.collectionsRouter = oj.Router.rootInstance.createChildRouter('collections').configure({
+        'data-grid':   { label: 'Data Grid',  isDefault: true },
+        'indexer':  { label: 'Indexer' },
+        'list-view': { label: 'List View' },
+        'paging-control': { label: 'Paging Control' },
+        'pull-to-refresh': { label: 'Pull To Refresh(Touch)' },
+        'row-expander': { label: 'Row Expander' },
+        'swipe-to-reveal': { label: 'Swipe To Reveal(Touch)' },
+        'table': { label: 'Table' },
+        'tree-view': { label: 'Tree View' },
+      });
+
+      self.display = ko.observable("all");
+      self.edge = ko.observable("end");
+
+      // this.selectedItem = ko.observable("home");
+
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
@@ -23,17 +42,20 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
        * after being disconnected.
        */
       self.connected = function() {
-        this.selectedItem = ko.observable("home");
-        this.display = ko.observable("all");
-        this.edge = ko.observable("end");
-        // Implement if needed
-      };
+        oj.Router.sync().then(
+          null,
+          function(error) {
+            oj.Logger.error('Error during refresh: ' + error.message);
+          }
+        );
+      }
 
       /**
        * Optional ViewModel method invoked after the View is disconnected from the DOM.
        */
       self.disconnected = function() {
         // Implement if needed
+        self.collectionsRouter.dispose();
       };
 
       /**
