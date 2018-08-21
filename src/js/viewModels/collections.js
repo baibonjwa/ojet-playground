@@ -6,11 +6,8 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodule-element-utils'],
  function(oj, ko, $, moduleUtils) {
-    oj.ModuleBinding.defaults.modelPath = 'viewModels/collections/';
-    oj.ModuleBinding.defaults.viewPath = 'text!views/collections/';
-
     function CollectionsViewModel() {
       var self = this;
       self.collectionsRouter = oj.Router.rootInstance.createChildRouter('collections').configure({
@@ -24,6 +21,27 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
         'table': { label: 'Table' },
         'tree-view': { label: 'Tree View' },
       });
+
+      self.moduleConfig = ko.observable({'view':[], 'viewModel':null});
+
+      self.loadModule = function() {
+        ko.computed(function() {
+          var name = self.collectionsRouter.moduleConfig.name();
+          var viewPath = '/js/views/collections/' + name + '.html';
+          var modelPath = '/js/viewModels/collections/' + name + '.js';
+          var masterPromise = Promise.all([
+            moduleUtils.createView({'viewPath': viewPath}),
+            moduleUtils.createViewModel({'viewModelPath': modelPath})
+          ]);
+          masterPromise.then(
+            function(values){
+              self.moduleConfig({'view':values[0],'viewModel':values[1]});
+            },
+            function(reason){}
+          );
+        });
+      };
+      self.loadModule();
 
       self.display = ko.observable("all");
       self.edge = ko.observable("end");
@@ -42,12 +60,6 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
        * after being disconnected.
        */
       self.connected = function() {
-        oj.Router.sync().then(
-          null,
-          function(error) {
-            oj.Logger.error('Error during refresh: ' + error.message);
-          }
-        );
       }
 
       /**
@@ -55,7 +67,6 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
        */
       self.disconnected = function() {
         // Implement if needed
-        self.collectionsRouter.dispose();
       };
 
       /**

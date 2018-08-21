@@ -81,8 +81,11 @@
           </ul>
         </oj-tab-bar>
       </div>
-      <div class="collections-content" data-bind="ojModule: collectionsRouter.moduleConfig">
-        <!-- <span id="results" data-bind='text: collectionsRouter.stateId()'></span> -->
+      <!-- <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleConfig]]">
+      </oj-module> -->
+      <!-- <span id="results" data-bind='text: collectionsRouter.stateId()'></span> -->
+      <oj-module class="collections-content oj-flex-item" role="main" config="[[moduleConfig]]">
+      </oj-module>
       </div>
     </div>
   </div>

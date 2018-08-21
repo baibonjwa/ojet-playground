@@ -31,7 +31,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
       });
 
       // Default is urlPathAdapter
-      oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+      // oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
       self.moduleConfig = ko.observable({'view':[], 'viewModel':null});
 
