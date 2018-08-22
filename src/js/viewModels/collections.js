@@ -6,10 +6,26 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodule-element-utils'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodule-element-utils', 'promise', 'ojs/ojdatagrid',
+'ojs/ojcollectiondatagriddatasource', 'ojs/ojvalidation-datetime', 'ojs/ojvalidation-number'],
  function(oj, ko, $, moduleUtils) {
     function CollectionsViewModel() {
       var self = this;
+
+      var collection = new oj.Collection(null, {
+        url: 'http://5b5ac2e250bab80014e5f7c4.mockapi.io/api/v1/users'
+      });
+
+      this.dataSource = new oj.CollectionDataGridDataSource(collection,
+        { rowHeader: 'id', columns: [
+          'avatar',
+          'name',
+          'title',
+          'country',
+          'createdAt'
+        ]}
+      );
+
       self.collectionsRouter = oj.Router.rootInstance.createChildRouter('collections').configure({
         'data-grid':   { label: 'Data Grid',  isDefault: true },
         'indexer':  { label: 'Indexer' },
