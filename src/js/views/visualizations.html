@@ -271,22 +271,32 @@
         style='width:100%;height:60px;'>
     </oj-legend>
   </div> -->
-  <oj-thematic-map id='map1'
-    animation-on-display='auto'
-    label-display='off'
-    markers='[[userData]]'
-    map-provider='[[mapProvider]]'
-    selection-mode='[[selectionMode]]'
-    panning='auto'
-    zooming='auto'
-    renderer="[[rendererFunc]]"
-    selection-renderer = "[[rendererFunc]]"
-    hover-renderer = "[[rendererFunc]]"
-    style='width:33%; height:400px;'>
-  </oj-thematic-map>
-  <oj-chart style="width: 33%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom"
-    series="[[barSeriesValue]]" groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
-  </oj-chart>
+  <div class="tile" style="width: 33%">
+    <div class="tile-header">Geographic Distribution</div>
+    <div class="tile-wrapper">
+      <oj-thematic-map id='map1'
+        animation-on-display='auto'
+        label-display='off'
+        markers='[[userData]]'
+        map-provider='[[mapProvider]]'
+        selection-mode='[[selectionMode]]'
+        panning='auto'
+        zooming='auto'
+        renderer="[[rendererFunc]]"
+        selection-renderer = "[[rendererFunc]]"
+        hover-renderer = "[[rendererFunc]]"
+        style='width:100%; height:400px;'>
+      </oj-thematic-map>
+    </div>
+  </div>
+  <div class="tile" style="width: 33%">
+    <div class="tile-header">Customer Composition</div>
+    <div class="tile-wrapper">
+      <oj-chart style="width: 100%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom"
+        series="[[barSeriesValue]]" groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
+      </oj-chart>
+    </div>
+  </div>
 
   <script type="text/html" id="marker_template">
     <svg width=100 height=100>
