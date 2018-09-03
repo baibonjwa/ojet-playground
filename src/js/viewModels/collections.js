@@ -13,7 +13,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojrouter', 
       var self = this;
 
       var collection = new oj.Collection(null, {
-        url: 'http://5b5ac2e250bab80014e5f7c4.mockapi.io/api/v1/users'
+        url: 'https://5b5ac2e250bab80014e5f7c4.mockapi.io/api/v1/users'
       });
 
       this.dataSource = new oj.CollectionDataGridDataSource(collection,

@@ -6,8 +6,9 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojchart', 'ojs/ojthematicmap', 'ojs/ojlegend'],
- function(oj, ko, $) {
+define(['ojs/ojcore', 'knockout', 'jquery', 'text!./data/usa_states.json',
+ 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojchart', 'ojs/ojthematicmap', 'ojs/ojlegend', ],
+ function(oj, ko, $, geo) {
 
     function VisualizationsViewModel() {
       var self = this;
@@ -53,6 +54,68 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'o
 
       self.barSeriesValue = ko.observableArray(barSeries);
       self.barGroupsValue = ko.observableArray(barGroups);
+
+      /* thematic maps */
+      this.selectionMode = ko.observable("single");
+      this.selectionOptions = ko.observableArray([
+        {id: 'none', label: 'none', value: 'none'},
+        {id: 'single', label: 'single', value: 'single'},
+        {id: 'multiple', label: 'multiple', value: 'multiple'}
+      ]);
+      this.rendererFunc = function(context) {
+        var template = 'marker_template' + (context.state.hovered ? '_hover' : '') + (context.state.selected ? '_selected' : '');
+        return oj.KnockoutTemplateUtils.getRenderer(template)(context);
+      };
+
+      this.mapProvider = {
+        geo: JSON.parse(geo),
+        propertiesKeys: {
+          id: 'sLabel',
+          shortLabel: 'sLabel',
+          longLabel: 'lLabel'
+        }
+      };
+
+      var colorHandler = new oj.ColorAttributeGroupHandler();
+
+      this.userData = [{
+        "location": "ND",
+        "initials": "NE",
+        "label": "Nina Evans",
+        "shortDesc": "Nina Evans",
+        "color" : "red"
+      }, {
+        "location": "FL",
+        "initials": "DL",
+        "label": "Diana Lorentz",
+        "shortDesc": "Diana Lorentz",
+        "color" : colorHandler.getValue(1)
+      }, {
+        "location": "HI",
+        "initials": "LW",
+        "label": "Lucy Whalen",
+        "shortDesc": "Lucy Whalen",
+        "color" : colorHandler.getValue(0)
+      }, {
+        "location": "CA",
+        "initials": "SK",
+        "label": "Steven King",
+        "shortDesc": "Steven King",
+        "color" : colorHandler.getValue(1)
+      }, {
+        "location": "TX",
+        "initials": "AH",
+        "label": "Alex Hunold",
+        "shortDesc": "Alex Hunold",
+        "color" : colorHandler.getValue(0)
+      }, {
+        "location": "MA",
+        "initials": "CD",
+        "label": "Curtis Davies",
+        "shortDesc": "Curtis Davies",
+        "color" : colorHandler.getValue(0)
+      }];
+
 
 
       // https://www.oracle.com/webfolder/technetwork/jet/cookbook/dataVisualizations/thematicMap/resources/maps/usa_states.json

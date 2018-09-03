@@ -267,14 +267,64 @@
     </oj-thematic-map>
     <oj-legend id='legend1' halign='center' orientation='horizontal' title='Annual Rainfall (Inches)'
         title-halign='center' title-style='{"fontSize": "14px", "fontWeight": "bold"}'
-        text-style='{"fontSize": "14px"}' sections='[[legendSections]]' 
+        text-style='{"fontSize": "14px"}' sections='[[legendSections]]'
         style='width:100%;height:60px;'>
     </oj-legend>
   </div> -->
+  <oj-thematic-map id='map1'
+    animation-on-display='auto'
+    label-display='off'
+    markers='[[userData]]'
+    map-provider='[[mapProvider]]'
+    selection-mode='[[selectionMode]]'
+    panning='auto'
+    zooming='auto'
+    renderer="[[rendererFunc]]"
+    selection-renderer = "[[rendererFunc]]"
+    hover-renderer = "[[rendererFunc]]"
+    style='width:33%; height:400px;'>
+  </oj-thematic-map>
   <oj-chart style="width: 33%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom"
     series="[[barSeriesValue]]" groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
   </oj-chart>
-  <oj-chart style="width: 33%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom"
-    series="[[barSeriesValue]]" groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
-  </oj-chart>
+
+  <script type="text/html" id="marker_template">
+    <svg width=100 height=100>
+      <g transform="translate(6,6)">
+      <circle cx="20" cy="20" r="26" :fill="[[color]]"/>
+      <circle cx="20" cy="20" fill="white" r="23"/>
+      <text :fill="[[color]]" style="font-size:24px;font-weight:bold;" text-anchor="middle"x="20" y="30"><oj-bind-text value="[[initials]]"></oj-bind-text></text>
+      </g>
+    </svg>
+  </script>
+
+  <script type="text/html" id="marker_template_hover">
+    <svg width=100 height=100>
+       <g transform="translate(6,6)">
+           <circle cx="20" cy="20" r="26" :fill="[[color]]"/>
+           <circle cx="20" cy="20" :fill="[[color]]" r="23"/>
+           <text fill="white" style="font-size:24px;font-weight:bold;" text-anchor="middle" x="20" y="30"><oj-bind-text value="[[initials]]"></oj-bind-text></text>
+       </g>
+     </svg>
+  </script>
+
+  <script type="text/html" id="marker_template_selected">
+    <svg width=100 height=100>
+       <g transform="translate(6,6)">
+           <circle cx="20" cy="20" r="26" fill="black"/>
+           <circle cx="20" cy="20" fill="white" r="23"/>
+           <text :fill="[[color]]" style="font-size:24px;font-weight:bold;" text-anchor="middle" x="20" y="30"><oj-bind-text value="[[initials]]"></oj-bind-text></text>
+       </g>
+     </svg>
+  </script>
+
+  <script type="text/html" id="marker_template_hover_selected">
+    <svg width=100 height=100>
+       <g transform="translate(6,6)">
+           <circle cx="20" cy="20" r="26" fill="black"/>
+           <circle cx="20" cy="20" :fill="[[color]]" r="23"/>
+           <text fill="white" style="font-size:24px;font-weight:bold;" text-anchor="middle" x="20" y="30"><oj-bind-text value="[[initials]]"></oj-bind-text></text>
+       </g>
+     </svg>
+  </script>
 </div>
