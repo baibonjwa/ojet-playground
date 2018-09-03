@@ -30,8 +30,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
         ]}
       );
 
-      console.log(collection)
-
       this.getCellClassName = function(cellContext)
       {
           var key = cellContext['keys']['column'];

@@ -6,9 +6,9 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodule-element-utils', 'promise', 'ojs/ojdatagrid',
-'ojs/ojcollectiondatagriddatasource', 'ojs/ojvalidation-datetime', 'ojs/ojvalidation-number'],
- function(oj, ko, $, moduleUtils) {
+define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojrouter', 'ojs/ojdatagrid',
+'ojs/ojcollectiondatagriddatasource'],
+ function(oj, ko, moduleUtils) {
     function CollectionsViewModel() {
       var self = this;
 
@@ -26,19 +26,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodule-element-utils', 'promi
         ]}
       );
 
-      self.collectionsRouter = oj.Router.rootInstance.createChildRouter('collections').configure({
-        'data-grid':   { label: 'Data Grid',  isDefault: true },
-        'indexer':  { label: 'Indexer' },
-        'list-view': { label: 'List View' },
-        'paging-control': { label: 'Paging Control' },
-        'pull-to-refresh': { label: 'Pull To Refresh(Touch)' },
-        'row-expander': { label: 'Row Expander' },
-        'swipe-to-reveal': { label: 'Swipe To Reveal(Touch)' },
-        'table': { label: 'Table' },
-        'tree-view': { label: 'Tree View' },
-      });
+      self.router = oj.Router.rootInstance;
+      self.collectionsRouter = self.router.getChildRouter('collections');
 
       self.moduleConfig = ko.observable({'view':[], 'viewModel':null});
+
+      self.modulePath = ko.pureComputed(
+        function() {
+          var name = self.collectionsRouter.moduleConfig.name();
+          return (name === 'oj:blank'? name: 'collections/' + name);
+        }
+      );
 
       self.loadModule = function() {
         ko.computed(function() {
@@ -76,6 +74,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodule-element-utils', 'promi
        * after being disconnected.
        */
       self.connected = function() {
+        self.router.collectionsRouter.sync()
+        self.router.sync()
       }
 
       /**

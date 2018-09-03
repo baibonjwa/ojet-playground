@@ -2,9 +2,279 @@
  Copyright (c) 2014, 2018, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
-<div class="oj-hybrid-padding">
-  <h1>Visualizations Content Area</h1>
-  <div>
-    Visualizations
+<div class="oj-flex visualizations-container">
+  <h1>Audience Analytics Dashboard / Customer Data / Home</h1>
+  <div class="tile" style="width: 66%">
+    <div class="tile-header">Top Performing Segments</div>
+    <oj-chart style="width: 100%;height: 90%" id="lineChart" type="line" series="[[lineSeriesValue]]" groups="[[lineGroupsValue]]"
+      animation-on-display="auto" animation-on-data-change="auto" legend.position="bottom" style-defaults.line-type="[[lineTypeValue]]"
+      style-defaults.marker-displayed="on" orientation="[[orientationValue]]" style="max-width:500px;width:100%;height:350px;">
+    </oj-chart>
   </div>
+  <div class="tile" style="width: 33%">
+    <div class="tile-header">Growth in Data</div>
+    <div class="tile-wrapper">
+      <table class="growth-in-data-table">
+        <tr>
+          <td>
+            386,445
+            <br />
+            <span>Total</span>
+          </td>
+          <td>
+            186,445
+            <br />
+            <span>Added last month</span>
+          </td>
+          <td>
+            67,000
+            <br />
+            <span>Added in the last 7 days</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <oj-chart id="lineChart" type="line" series="[[lineSeriesValue2]]" groups="[[lineGroupsValue2]]" animation-on-display="auto"
+      animation-on-data-change="auto" legend.position="bottom" style-defaults.line-type="[[lineTypeValue2]]" style-defaults.marker-displayed="on"
+      orientation="[[orientationValue]]" style="max-width:500px;width:100%;height:350px;">
+    </oj-chart>
+  </div>
+  <div class="tile" style="width: 33%">
+    <div class="tile-header">Customer Retention</div>
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <td></td>
+          <td>Day 1</td>
+          <td>Day 2</td>
+          <td>Day 3</td>
+          <td>Day 4</td>
+          <td>Day 5</td>
+          <td>Day 6</td>
+          <td>Day 7</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cell-header">Aguest 14</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-2">2.55%</td>
+          <td class="blue-4">1.02%</td>
+          <td class="blue-4">1.02%</td>
+          <td class="blue-4">1.02%</td>
+          <td class="blue-3">1.53%</td>
+          <td class="blue-5">0.51%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 15</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-2">2.55%</td>
+          <td class="blue-2">1.02%</td>
+          <td class="blue-2">1.02%</td>
+          <td class="blue-2">1.02%</td>
+          <td class="blue-3">1.53%</td>
+          <td class="blue-3">0.51%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 16</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-2">2.55%</td>
+          <td class="blue-2">1.02%</td>
+          <td class="blue-3">1.02%</td>
+          <td class="blue-3">1.02%</td>
+          <td class="blue-5">1.53%</td>
+          <td>0.51%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 17</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-2">2.55%</td>
+          <td class="blue-3">1.02%</td>
+          <td class="blue-4">1.02%</td>
+          <td class="blue-5">1.02%</td>
+          <td>1.53%</td>
+          <td>0.51%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 18</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-2">2.55%</td>
+          <td class="blue-4">1.02%</td>
+          <td class="blue-5">1.02%</td>
+          <td>1.02%</td>
+          <td>1.53%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 19</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-3">2.55%</td>
+          <td class="blue-4">1.02%</td>
+          <td>1.02%</td>
+          <td>1.02%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 20</td>
+          <td class="blue-1">26.53%</td>
+          <td class="blue-4">2.55%</td>
+          <td>1.02%</td>
+          <td>1.53%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 21</td>
+          <td class="blue-1">26.53%</td>
+          <td>2.55%</td>
+          <td>1.02%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 22</td>
+          <td>42.75%</td>
+          <td>2.55%</td>
+        </tr>
+        <tr>
+          <td class="cell-header">Aguest 23</td>
+          <td>44.19%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tile" style="width: 33%">
+    <div class="tile-header">Customer Retention by Segments</div>
+    <table class="dashboard-table">
+        <thead>
+          <tr>
+            <td></td>
+            <td>Day 1</td>
+            <td>Day 2</td>
+            <td>Day 3</td>
+            <td>Day 4</td>
+            <td>Day 5</td>
+            <td>Day 6</td>
+            <td>Day 7</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cell-header">Aguest 14</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-2">2.55%</td>
+            <td class="red-4">1.02%</td>
+            <td class="red-4">1.02%</td>
+            <td class="red-4">1.02%</td>
+            <td class="red-3">1.53%</td>
+            <td class="red-5">0.51%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 15</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-2">2.55%</td>
+            <td class="red-2">1.02%</td>
+            <td class="red-2">1.02%</td>
+            <td class="red-2">1.02%</td>
+            <td class="red-3">1.53%</td>
+            <td class="red-3">0.51%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 16</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-2">2.55%</td>
+            <td class="red-2">1.02%</td>
+            <td class="red-3">1.02%</td>
+            <td class="red-3">1.02%</td>
+            <td class="red-5">1.53%</td>
+            <td>0.51%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 17</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-2">2.55%</td>
+            <td class="red-3">1.02%</td>
+            <td class="red-4">1.02%</td>
+            <td class="red-5">1.02%</td>
+            <td>1.53%</td>
+            <td>0.51%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 18</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-2">2.55%</td>
+            <td class="red-4">1.02%</td>
+            <td class="red-5">1.02%</td>
+            <td>1.02%</td>
+            <td>1.53%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 19</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-3">2.55%</td>
+            <td class="red-4">1.02%</td>
+            <td>1.02%</td>
+            <td>1.02%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 20</td>
+            <td class="red-1">26.53%</td>
+            <td class="red-4">2.55%</td>
+            <td>1.02%</td>
+            <td>1.53%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 21</td>
+            <td class="red-1">26.53%</td>
+            <td>2.55%</td>
+            <td>1.02%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 22</td>
+            <td>42.75%</td>
+            <td>2.55%</td>
+          </tr>
+          <tr>
+            <td class="cell-header">Aguest 23</td>
+            <td>44.19%</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="tile" style="width: 33%">
+    <div class="tile-header">Recommendations by Segments</div>
+    <div class="tile-wrapper">
+      <table class="growth-in-data-table">
+        <tr>
+          <td>
+            0.50%
+            <br />
+            <span>with 10% increase in Millenials</span>
+          </td>
+          <td>
+            1.07%
+            <br />
+            <span>with 10% increase in Home Owners</span>
+          </td>
+          <td>
+            0.20%
+            <br />
+            <span>with 10% increase in Sports Enthusiast</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <oj-chart style="width: 100%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom" series="[[barSeriesValue]]"
+      groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
+    </oj-chart>
+  </div>
+  <!-- <div id='mapdemo'>
+    <oj-thematic-map id='thematicmap1' areas='[[areaData]]' map-provider='[[mapProvider]]' style='width:100%;height:400px;'>
+    </oj-thematic-map>
+    <oj-legend id='legend1' halign='center' orientation='horizontal' title='Annual Rainfall (Inches)'
+        title-halign='center' title-style='{"fontSize": "14px", "fontWeight": "bold"}'
+        text-style='{"fontSize": "14px"}' sections='[[legendSections]]' 
+        style='width:100%;height:60px;'>
+    </oj-legend>
+  </div> -->
+  <oj-chart style="width: 33%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom"
+    series="[[barSeriesValue]]" groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
+  </oj-chart>
+  <oj-chart style="width: 33%" id="barChart" type="bar" orientation="[[orientationValue]]" stack="[[stackValue]]" legend.position="bottom"
+    series="[[barSeriesValue]]" groups="[[barGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" hover-behavior="dim">
+  </oj-chart>
 </div>

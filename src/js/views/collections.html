@@ -5,6 +5,9 @@
 <div class="oj-hybrid-padding">
   <div>
     <div class="oj-flex collections-container">
+      <!-- <span>
+        <oj-bind-text value='[[collectionsRouter.stateId]]'></oj-bind-text>
+      </span> -->
       <div id="tabbarcontainer" data-bind="style: {'maxWidth':(edge() === 'end' || edge() === 'start') ? '250px':''}">
         <!-- <oj-tab-bar drill-mode="none" display="[[display]]" edge="[[edge]]" selection="{{selectedItem}}"> -->
         <oj-tab-bar drill-mode="none" display="[[display]]" edge="[[edge]]" selection="{{collectionsRouter.stateId}}">
@@ -82,53 +85,44 @@
         </oj-tab-bar>
       </div>
       <div class="oj-flex-item">
-        <oj-data-grid id="datagrid"
-          style="width:100%;height:400px;"
-          aria-label="Data Grid Formatted Row Based Grid Demo"
-          data="[[dataSource]]"
-          selection-mode.row="multiple"
-          banding-interval.row="1"
-          dnd.reorder.row="enable"
-          header.column.renderer="[[oj.KnockoutTemplateUtils.getRenderer('header_template')]]"
-          header.column.style="width:125px"
-          header.column.resizable.width="enable"
-          header.column.resizable.height="enable"
-          cell.renderer="[[oj.KnockoutTemplateUtils.getRenderer('cell_template')]]"
-        ></oj-data-grid>
+        <oj-data-grid id="datagrid" style="width:100%;height:400px;" aria-label="Data Grid Formatted Row Based Grid Demo" data="[[dataSource]]"
+          selection-mode.row="multiple" banding-interval.row="1" dnd.reorder.row="enable" header.column.renderer="[[oj.KnockoutTemplateUtils.getRenderer('header_template')]]"
+          header.column.style="width:125px" header.column.resizable.width="enable" header.column.resizable.height="enable"
+          cell.renderer="[[oj.KnockoutTemplateUtils.getRenderer('cell_template')]]"></oj-data-grid>
 
         <script type="text/html" id="header_template">
           <!-- ko if: $context.key=='avatar' -->
-              <span data-bind="text: 'Avatar'"></span>
+          <span data-bind="text: 'Avatar'"></span>
           <!-- /ko -->
           <!-- ko if: $context.key=='country' -->
-              <span data-bind="text: 'Country'"></span>
+          <span data-bind="text: 'Country'"></span>
           <!-- /ko -->
           <!-- ko if: $context.key=='title' -->
-              <span data-bind="text: 'Title'"></span>
+          <span data-bind="text: 'Title'"></span>
           <!-- /ko -->
           <!-- ko if: $context.key=='name' -->
-              <span data-bind="text: 'Name'"></span>
+          <span data-bind="text: 'Name'"></span>
           <!-- /ko -->
           <!-- ko if: $context.key=='createdAt' -->
-              <span data-bind="text: 'Created At'"></span>
+          <span data-bind="text: 'Created At'"></span>
           <!-- /ko -->
         </script>
 
         <script type="text/html" id="cell_template">
           <!-- ko if: ($context.keys.column=='name' || $context.keys.column=='title' || $context.keys.column=='country') -->
-            <span data-bind="text: $context.data"></span>
+          <span data-bind="text: $context.data"></span>
           <!-- /ko -->
           <!-- ko if: ($context.keys.column=='avatar') -->
-            <img data-bind="attr: { src: $context.data }" />
+          <img data-bind="attr: { src: $context.data }" />
           <!-- /ko -->
         </script>
       </div>
       <!-- <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleConfig]]">
-      </oj-module> -->
+        </oj-module> -->
       <!-- <span id="results" data-bind='text: collectionsRouter.stateId()'></span> -->
-      <oj-module class="collections-content oj-flex-item" role="main" config="[[moduleConfig]]">
-      </oj-module>
-      </div>
+      <div class="collections-content oj-flex-item" data-bind="ojModule: modulePath" style="background-color:aliceblue"></div>
+      <oj-module class="collections-content oj-flex-item" role="main" config="[[moduleConfig]]"></oj-module>
+      <!-- <div class="collections-content oj-flex-item" data-bind="ojModule: moduleConfig" style="background-color:aliceblue"></div> -->
     </div>
   </div>
 </div>

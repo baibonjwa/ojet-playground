@@ -53,16 +53,17 @@ requirejs.config(
  * by the modules themselves), we are listing them explicitly to get the references to the 'oj' and 'ko'
  * objects in the callback
  */
-require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
+require(['ojs/ojcore', 'knockout', 'appController', 'viewModels/collections', 'ojs/ojknockout',
   'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar'],
-  function (oj, ko, app) { // this callback gets executed when all required modules are loaded
+  function (oj, ko, app, collections) { // this callback gets executed when all required modules are loaded
 
     $(function() {
 
       function init() {
         oj.Router.sync().then(
           function () {
-            app.loadModule();
+            // app.loadModule();
+            // collections.loadModule();
             // Bind your ViewModel for the content of the whole page body.
             ko.applyBindings(app, document.getElementById('globalBody'));
           },

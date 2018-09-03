@@ -64,7 +64,6 @@
         <oj-navigation-list data="[[navDataSource]]"
                             edge="start"
                             item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
-                            on-click="[[toggleDrawer]]"
                             selection="{{router.stateId}}">
         </oj-navigation-list>
       </div>
@@ -76,10 +75,10 @@
             ** on the JET website for more information on how to use this pattern.
         -->
         <header role="banner" class="oj-web-applayout-header">
-          <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+          <div class="oj-flex-bar oj-sm-align-items-center">
             <!-- Offcanvas toggle button -->
             <div class="oj-flex-bar-start oj-md-hide">
-              <oj-button id="drawerToggleButton" class="oj-button-lg" on-oj-action="[[toggleDrawer]]" chroming="half" display="icons">
+              <oj-button id="drawerToggleButton" class="oj-button-lg" chroming="half" display="icons">
                 <span slot="startIcon" class="oj-web-applayout-offcanvas-icon"></span>
                 <span>Application Navigation</span>
               </oj-button>
@@ -91,9 +90,9 @@
             <div class="oj-flex-bar-end">
               <!-- Responsive Toolbar -->
               <oj-toolbar>
-                <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
+                <oj-menu-button id="userMenu" display="[['all']]" chroming="half">
                   <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
-                  <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
+                  <span slot="endIcon"></span>
                   <oj-menu id="menu1" slot="menu" style="display:none">
                     <oj-option id="collections" value="collections">Collections</oj-option>
                     <oj-option id="controls" value="controls">Controls</oj-option>
@@ -116,22 +115,9 @@
             </oj-navigation-list>
           </div>
         </header>
-        <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleConfig]]">
-        </oj-module>
-        <footer class="oj-web-applayout-footer" role="contentinfo">
-          <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
-            <ul>
-              <oj-bind-for-each data="[[footerLinks]]">
-                <template>
-                  <li><a :id="[[$current.data.linkId]]" :href="[[$current.data.linkTarget]]"><oj-bind-text value="[[$current.data.name]]"></oj-bind-text></a></li>
-                </template>
-              </oj-bind-for-each>
-            </ul>
-          </div>
-          <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
-            Copyright © 2014, 2018 Oracle and/or its affiliates All rights reserved.
-          </div>
-        </footer>
+        <!-- <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[router.moduleConfig]]">
+        </oj-module> -->
+        <div class="collections-content oj-flex-item" data-bind="ojModule: modulePath"></div>
       </div>
     </div>
 
