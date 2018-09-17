@@ -4,7 +4,76 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>Forms Content Area</h1>
-  <div>
-    Forms
+  <div id="formId">
+    <oj-label id="agreeId" show-required>License Agreement </oj-label>
+    <oj-checkboxset id="checkboxSetAgreeId" labelled-by="agreeId"
+                    value="{{agreement}}"
+                    required >
+      <oj-option id="agree" value="agree">I Agree</oj-option>
+    </oj-checkboxset>
+    <br/>
+    <span>Current component value is: </span>
+    <span id="curr-value" data-bind="text: agreement"></span>
+    <br/>
+    <br/>
+  <br/>
+    <oj-label id="mainlabelid">Colors</oj-label>
+    <!-- You need to set the labelled-by attribute
+         to make this accessible.
+         role="group" is set for you by oj-checkboxset. -->
+    <oj-checkboxset id="checkboxSetId" labelled-by="mainlabelid"
+          value="{{currentColor}}">
+      <oj-option id="blueopt" value="blue">Blue</oj-option>
+      <oj-option id="greenopt" value="green">Green</oj-option>
+      <oj-option id="redopt" value="red">Red</oj-option>
+      <oj-option id="limeopt" value="lime">Lime</oj-option>
+      <oj-option id="aquaopt" value="aqua">Aqua</oj-option>
+    </oj-checkboxset>
+    <br/>
+    <span>Current component value is: </span>
+    <span id="curr-value1" data-bind="text: currentColor"></span>
+    <br/>
+    <br/>
+    <div id='buttons-container'>
+        <a href="description.html"></a>
+        <oj-button id='inputButton3' on-oj-action='[[setModelCurrentColorToAquaBlue]]'>Set model currentColor to aqua, blue</oj-button>
+    </div>
+  </div>
+
+  <div id="form2">
+    <oj-label for="combobox">Combobox One with disabled option item</oj-label>
+    <oj-combobox-one id="combobox" style="max-width:20em">
+      <oj-option value="Internet Explorer">Internet Explorer</oj-option>
+      <oj-option value="Firefox">Firefox</oj-option>
+      <oj-option value="Chrome">Chrome</oj-option>
+      <oj-option value="Opera" disabled="[[isDisabled]]">Opera</oj-option>
+      <oj-option value="Safari">Safari</oj-option>
+    </oj-combobox-one>
+    <br/><br/>
+    <oj-label for="combobox2">Disabled Combobox One</oj-label>
+    <oj-combobox-one id="combobox2" disabled="true" style="max-width:20em">
+      <oj-option value="Internet Explorer">Internet Explorer</oj-option>
+      <oj-option value="Firefox">Firefox</oj-option>
+      <oj-option value="Chrome">Chrome</oj-option>
+      <oj-option value="Opera">Opera</oj-option>
+      <oj-option value="Safari">Safari</oj-option>
+    </oj-combobox-one>
+  </div>
+
+  <div id="slider-container">
+    <oj-label for="slider"> slider component </oj-label>
+    <oj-slider id="slider" value="{{value}}" min="[[min]]" max="[[max]]" step="[[step]]"> </oj-slider>
+    <br>
+    <span> Value: </span>
+    <span id="value" data-bind="text: value"></span>
+  </div>
+
+  <div id="div1">
+    <oj-label for="dateTime">Default</oj-label>
+    <oj-input-date-time id="dateTime" value='{{value2}}'>
+    </oj-input-date-time>
+    <br/><br/>
+    <span class="oj-label">Current component value is:</span>
+    <span data-bind="text: value2"></span>
   </div>
 </div>

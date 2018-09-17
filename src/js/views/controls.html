@@ -4,7 +4,138 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>Controls Content Area</h1>
-  <div>
-    Controls
+  <h1>Buttons</h1>
+  <oj-button id='button1' on-oj-action='[[buttonClick]]'>Button 1</oj-button>
+  <oj-button id='button2' on-oj-action='[[buttonClick]]'>
+      <span><oj-bind-text value="[[button2Text]]"></oj-bind-text></span>
+  </oj-button>
+  <oj-button id='button3' on-oj-action='[[buttonClick]]' display='icons'>
+      <img slot="startIcon"
+          src="css/samples/cookbook/images/hiResContrast/icon.png"
+          alt="Button 3"
+          width="16" height="16"/>Button 3
+  </oj-button>
+
+  <oj-buttonset-many id="advancedWrapper" value="{{isAdvanced}}">
+    <oj-option value="advanced">Advanced mode</oj-option>
+  </oj-buttonset-many>
+
+  <h1>Menu</h1>
+  <oj-menu-button id="menuButton">
+    Actions
+    <!-- To handle menu item selection, use an action listener as shown, not a click listener. -->
+    <oj-menu id="myMenu" slot="menu" style="display:none" on-oj-action="[[menuItemAction]]">
+      <oj-option id="zoomin" value="Zoom In">
+        <span class="oj-fwk-icon oj-fwk-icon-arrow-n" slot="startIcon"></span>Zoom In
+      </oj-option>
+      <oj-option id="zoomout" value="Zoom Out">
+        <span class="demo-icon-font demo-bookmark-icon-16" slot="startIcon"></span>Zoom Out
+      </oj-option>
+      <oj-option id="divider"></oj-option>
+      <oj-option id="save" value="Save">
+        <span class="demo-icon-font demo-palette-icon-24" slot="startIcon"></span>Save
+      </oj-option>
+      <oj-option id="print" value="Print..." disabled="true">
+        <span class="demo-icon-font demo-chat-icon-24" slot="startIcon"></span>Print...
+      </oj-option>
+    </oj-menu>
+  </oj-menu-button>
+
+  <h1>Progress</h1>
+  <div id="demo-container" >
+    <div id="loadingRegion" aria-busy="true" aria-describedby="progressBar">
+      Loading...
+    </div>
+    <oj-progress id="progressBar" style="width: 200px;margin-top: 20px" value="{{progressValue}}"></oj-progress>
+    <br/>
+    <oj-progress id="progressCircle" type="circle" value="{{progressValue}}"></oj-progress>
   </div>
+
+  <div id='toolbar-container'>
+        
+    <oj-label id='toolbarClassesLabel'>Classes to apply to the toolbar:</oj-label>
+    <oj-checkboxset id='checkboxSet' aria-labelledby='toolbarClassesLabel' value={{toolbarClassNames}}>
+      <oj-option id='topBorder' value='oj-toolbar-top-border'>
+        .oj-toolbar-top-border (Optional.)
+      </oj-option>
+      <oj-option id='bottomBorder' value='oj-toolbar-bottom-border'>
+        .oj-toolbar-bottom-border (Optional.)
+      </oj-option>
+      <oj-option id='noChrome' value='oj-toolbar-no-chrome'>
+        .oj-toolbar-no-chrome (Optional.  No effect in Alta theme.)
+      </oj-option>
+    </oj-checkboxset>
+    <br><br>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- This css binding applies the 0 to 3 style classes selected above. -->
+    <oj-toolbar id='myToolbar' aria-label='Editing Toolbar' aria-controls='controlled'
+         data-bind='css:toolbarClasses'>
+      <oj-button id='chat' display='icons'>
+         <span slot='startIcon' class='demo-icon-font demo-chat-icon-24'></span>
+         Chat
+      </oj-button>
+      <oj-button id='paint' display='icons'>
+         <span slot='startIcon' class='demo-icon-font demo-palette-icon-24'></span>
+         Paint
+      </oj-button>
+      <oj-button id='bookmark' display='icons' disabled='true'>
+         <span slot='startIcon' class='demo-icon-font demo-bookmark-icon-16'></span>
+         Bookmark
+      </oj-button>
+
+      <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+
+      <oj-buttonset-many id="checkWrapper" focus-management="none">
+        <oj-option id="toggle">
+          Toggle
+        </oj-option>
+      </oj-buttonset-many>
+
+      <oj-menu-button id="menuButton">
+        Menu Button
+        <oj-menu id="myMenu" slot="menu" style="display:none">
+          <oj-option id="save" value="Save">
+            <span class="demo-icon-font demo-palette-icon-24" slot="startIcon"></span>Save
+          </oj-option>
+          <oj-option id="zoomin" value="Zoom In">
+            <span class="oj-fwk-icon oj-fwk-icon-arrow-n" slot="startIcon"></span>Zoom In
+          </oj-option>
+          <oj-option id="zoomout" value="Zoom Out">
+            <span class="demo-icon-font demo-bookmark-icon-16" slot="startIcon"></span>Zoom Out
+          </oj-option>
+          <oj-option id="print" value="Print..." disabled="true">
+            <span class="demo-icon-font demo-chat-icon-24" slot="startIcon"></span>Print...
+          </oj-option>
+        </oj-menu>
+      </oj-menu-button>
+
+      <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+
+      <oj-buttonset-one id="drinkset" focus-management="none">
+        <!-- ko foreach: drinkValues -->
+        <oj-option value="[[id]]">
+          <span data-bind="text: label"></span>
+        </oj-option>
+        <!-- /ko -->
+      </oj-buttonset-one>
+
+      <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+
+      <oj-buttonset-many id="iconset" display="icons" focus-management="none">
+        <!-- ko foreach: someButtons -->
+        <oj-option value="[[id]]">
+          <span slot="startIcon" data-bind="css: icon"></span>
+          <span data-bind="text: id"></span>
+        </oj-option>
+        <!-- /ko -->
+      </oj-buttonset-many>
+    </oj-toolbar>
+
+    <!-- In a real app, the element referenced by aria-controls would actually be updated in some way by the toolbar. -->
+    <br><br><a id='controlled' href='#'>Element referenced by toolbar's aria-controls</a>
+
+  </div>
+
 </div>

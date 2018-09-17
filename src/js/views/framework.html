@@ -2,9 +2,43 @@
  Copyright (c) 2014, 2018, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
-<div class="oj-hybrid-padding">
-  <h1>Framework Content Area</h1>
-  <div>
-    Framework
+ <div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+    
+    <div id="animationDemo">
+    
+      <div>
+        <oj-button on-oj-action='[[buttonClick]]'>
+            Click to Flip
+        </oj-button>
+      </div>
+    
+      <div id="animatable" class="container">
+      
+        <!-- back face of card -->
+        <div class="cardface backside oj-animation-backface">
+          <oj-table id="table1" aria-label="Data Table 1"
+                    data='[[dataprovider]]'
+                    columns='[{"headerText": "Name", "field": "name"},
+                              {"headerText": "Items", "field": "items"}]'>
+          </oj-table>
+        </div>
+    
+        <!-- front face of card -->
+        <div class="cardface">
+          <oj-chart id="pieChart"
+                    type='pie'
+                    series='[[dataSeries]]'
+                    style-defaults='{"threeDEffect": "on"}'
+                    hover-behavior='dim'
+                    style='width:100%'>
+          </oj-chart>
+        </div>
+        
+      </div>
+    
+    </div>
+
+    
   </div>
 </div>

@@ -6,20 +6,40 @@
 /*
  * Your customer ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore',
+ 'knockout', 'jquery', 'ojs/ojbutton',
+ 'ojs/ojcheckboxset', 'ojs/ojlabel', 'ojs/ojselectcombobox',
+ 'ojs/ojslider', 'ojs/ojdatetimepicker', 'ojs/ojtimezonedata'],
  function(oj, ko, $) {
-  
+
     function CustomerViewModel() {
       var self = this;
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
+      // this variable keeps track of the currentColor.
+      // It's a Knockout observable which
+      // means it is a two-way binding.
+      self.currentColor = ko.observableArray(["red"]);
+      self.agreement = ko.observableArray();
+      self.setModelCurrentColorToAquaBlue = function() {
+        self.currentColor(["aqua", "blue"]);
+        return true;
+      }
 
+      this.isDisabled=ko.observable(true);
+
+      self.max = ko.observable(200);
+      self.min = ko.observable(0);
+      self.value = ko.observable(90);
+      self.step = ko.observable(10);
+
+      this.value2 = ko.observable(oj.IntlConverterUtils.dateToLocalIso(new Date(2013, 0, 1)));
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being
-       * attached here. 
+       * attached here.
        * This method might be called multiple times - after the View is created 
-       * and inserted into the DOM and after the View is reconnected 
+       * and inserted into the DOM and after the View is reconnected
        * after being disconnected.
        */
       self.connected = function() {

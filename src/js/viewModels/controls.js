@@ -6,20 +6,69 @@
 /*
  * Your incidents ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojprogress'],
  function(oj, ko, $) {
-  
+
     function IncidentsViewModel() {
       var self = this;
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
+      self.button2Text = "Button 2";
+
+      self.clickedButton = ko.observable("(None clicked yet)");
+      self.buttonClick = function(event){
+          self.clickedButton(event.currentTarget.id);
+          return true;
+      }
+
+      this.isAdvanced = ko.observableArray([]);
+
+      self.selectedMenuItem = ko.observable("");
+
+      self.menuItemAction = function( event ) {
+        self.selectedMenuItem(event.target.value);
+      };
+
+      self.progressValue = ko.observable(0);
+      self.progressValue.subscribe(function(newValue) {
+        if(newValue == 100) {
+          $("#loadingRegion").text("Done!");
+          $("#loadingRegion").removeAttr("aria-busy");
+          $("#loadingRegion").removeAttr("aria-describedby");
+        }
+      });
+      window.setInterval(function() {
+        if (self.progressValue() !== -1)
+          self.progressValue(self.progressValue() + 1);
+      }, 30);
+
+          // if the contents of the array can change, then replace the [...] with ko.observableArray([...])
+      this.drinkValues = [
+          {id: 'coffee', label: 'Coffee'},
+          {id: 'tea',    label: 'Tea'},
+          {id: 'milk',   label: 'Milk'},
+      ];
+
+      // if the contents of the array can change, then replace the [...] with ko.observableArray([...])
+      this.someButtons = [
+          {id: 'Library',  icon: 'demo-icon-font demo-library-icon-24'},
+          {id: 'Home', icon: 'demo-icon-font demo-home-icon-24'},
+          {id: 'Grid',  icon: 'oj-fwk-icon-grid oj-fwk-icon'}
+      ];
+
+      this.toolbarClassNames = ko.observableArray([]);
+
+      this.toolbarClasses = ko.computed(function() {
+          return this.toolbarClassNames().join(" ");
+      }, this);
+
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being
-       * attached here. 
+       * attached here.
        * This method might be called multiple times - after the View is created 
-       * and inserted into the DOM and after the View is reconnected 
+       * and inserted into the DOM and after the View is reconnected
        * after being disconnected.
        */
       self.connected = function() {

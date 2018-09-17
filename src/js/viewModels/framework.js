@@ -6,9 +6,31 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
- function(oj, ko, $) {
-  
+define(['ojs/ojcore', 'knockout', 'ojs/ojarraydataprovider',
+'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojanimation', 'ojs/ojtable', 'ojs/ojchart'],
+ function(oj, ko, ArrayDataProvider) {
+
+    // Keep track of whether the front or back is showing
+    self.showingFront = true;
+    self.buttonClick = function() {
+      var elem = document.getElementById('animatable');
+      // Determine startAngle and endAngle
+      var startAngle = self.showingFront ? '0deg' : '180deg';
+      var endAngle = self.showingFront ? '180deg' : '0deg';
+      // Animate the element
+      oj.AnimationUtils['flipOut'](elem, {'flipTarget': 'children',
+                                          'persist': 'all',
+                                          'startAngle': startAngle,
+                                          'endAngle': endAngle});
+      self.showingFront = !self.showingFront;
+    };
+    self.dataSeries = [{name: "Series 1", items: [42]},
+                        {name: "Series 2", items: [55]},
+                        {name: "Series 3", items: [36]},
+                        {name: "Series 4", items: [10]},
+                        {name: "Series 5", items: [5]}];
+    self.dataprovider = new ArrayDataProvider(this.dataSeries, {keyAttributes: 'name'});
+
     function AboutViewModel() {
       var self = this;
       // Below are a set of the ViewModel methods invoked by the oj-module component.
